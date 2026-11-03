@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wale Lab R2I Dashboard · Oluwumi Oyekanmi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="How I built attendance tracking, four-pass identity matching, weighted grading and feedback routing for a 164-fellow research fellowship.">
+<meta property="og:title" content="Wale Lab R2I Dashboard · Oluwumi Oyekanmi">
+<meta property="og:description" content="How I built attendance tracking, four-pass identity matching, weighted grading and feedback routing for a 164-fellow research fellowship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-base="../">
+<a class="skip" href="#main">Skip To Content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../">OLUWUMI OYEKANMI</a>
+    <nav class="nav" aria-label="Main">
+      <a class="hide-sm" href="../#about">About</a>
+      <a class="hide-sm" href="../#approach">Approach</a>
+      <details class="dropdown">
+        <summary>Case Studies</summary>
+        <div class="dropdown-menu" data-case-menu></div>
+      </details>
+      <a href="../#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Switch Theme">&#9790;</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="cs-hero">
+    <div class="wrap">
+      <a class="back" href="../#work">&larr; All Case Studies</a>
+      <p class="eyebrow">Case Study 04 · Education</p>
+      <h1>Wale Lab R2I Dashboard</h1>
+      <p class="cs-sub">Graduation Decisions Built On Data You Can Trust</p>
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>Product Owner And Builder<small>Technical Contractor</small></dd></div>
+        <div><dt>Status</dt><dd><span class="status status-completed">Completed</span><small>Research To Impact Fellowship, Cohort 3</small></dd></div>
+        <div><dt>Users</dt><dd>Fellows · Facilitators · Admins</dd></div>
+        <div><dt>Platform</dt><dd>Google Sheets · Forms · Apps Script · Gmail<small>Built with Claude</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="wrap cs-layout">
+    <nav class="toc" aria-label="On This Page">
+      <p>On This Page</p>
+      <a href="#overview">Overview</a>
+      <a href="#problem">The Problem</a>
+      <a href="#principles">Design Principles</a>
+      <a href="#how">How It Works</a>
+      <a href="#grading">Grading Model</a>
+      <a href="#decisions">Key Decisions</a>
+      <a href="#result">Result</a>
+      <a href="#next">What I Would Do Next</a>
+    </nav>
+
+    <article class="article">
+      <section id="overview">
+        <h2><span class="n">01</span>Overview</h2>
+        <div class="results">
+          <div class="result"><span class="big">164</span><span>Fellows</span></div>
+          <div class="result"><span class="big">2</span><span>Research tracks: STEM and SHAPE</span></div>
+          <div class="result"><span class="big">20</span><span>Sessions tracked</span></div>
+          <div class="result"><span class="big">80%</span><span>Attendance bar to certify</span></div>
+        </div>
+        <p class="lead">A 10-week research fellowship with a weighted credit system and a hard attendance bar. Attendance sat in about 20 separate form tabs, and fellows typed in their own details.</p>
+        <p>I owned the product end to end, from requirements to data architecture to build, iterating while the cohort was live for Wale Lab, the research and innovation hub of Wale University. The core requirement: no data error should decide who graduates.</p>
+        <div class="privacy"><span class="src src-recreated">Dummy Data</span><span>Every visual on this page is recreated from the live product with invented fellows, IDs, scores and figures.</span></div>
+      </section>
+
+      <section id="problem">
+        <h2><span class="n">02</span>The Problem</h2>
+        <ul>
+          <li>Attendance fragmented across about 20 form tabs.</li>
+          <li>Fellows could fall below the bar before anyone noticed.</li>
+          <li>Messy self-entered data: reversed names, middle names, student ID typos and mismatched emails.</li>
+          <li>Feedback that had to reach only the right track, STEM or SHAPE.</li>
+          <li>No weekly view of programme health.</li>
+        </ul>
+      </section>
+
+      <section id="principles">
+        <h2><span class="n">03</span>Design Principles</h2>
+        <div class="users">
+          <div class="user"><h3>Early Warnings Change Behaviour</h3><p>Tell fellows the same day, while they can still recover.</p></div>
+          <div class="user"><h3>Never Trust Self-Entered Data As-Is</h3><p>Matching must tolerate human error.</p></div>
+          <div class="user"><h3>Feedback Must Reach The Right People</h3><p>Route it by track, or it becomes noise.</p></div>
+          <div class="user"><h3>Admins Need A Digest</h3><p>Not another spreadsheet to remember to check.</p></div>
+          <div class="user"><h3>No Code To Operate</h3><p>Every routine task runs from a menu.</p></div>
+        </div>
+      </section>
+
+      <section id="how">
+        <h2><span class="n">04</span>How It Works</h2>
+        <div class="flow">
+          <div class="flow-step"><span class="k">Module 1</span><b>Attendance Engine</b><span>Reads every session's responses and marks Present or Absent.</span></div>
+          <div class="flow-step hot"><span class="k">Module 2</span><b>Four-Pass Matching</b><span>Resolves reversed names, middle names, ID typos and mismatched emails.</span></div>
+          <div class="flow-step"><span class="k">Module 3</span><b>Grading Dashboard</b><span>Score entry feeds automatic grades and tiers.</span></div>
+          <div class="flow-step"><span class="k">Module 4</span><b>Feedback Routing</b><span>Seven-point ratings routed to the right track.</span></div>
+          <div class="flow-step"><span class="k">Module 5</span><b>Admin Digest</b><span>No-code menu and a Monday summary.</span></div>
+        </div>
+        <p>Every evening, each fellow receives <strong>Attendance Confirmed</strong> with a running count, or <strong>Absence Recorded</strong> with a 48-hour correction window. Standing: <strong>On Track</strong> (0 to 2 missed), <strong>At Risk</strong> (3 to 4) and <strong>Out</strong> (5 or more). Fellows marked Out leave routine updates. Anything still unmatched goes to admins as a <strong>Flagged Submission Alert</strong> before the window closes.</p>
+
+        <figure class="figure mockwrap">
+          <div class="mock" id="thumb-src">
+            <div class="sheet-bar"><span class="sheet-icon"></span><span class="sheet-title">R2I Fellowship Cohort 3 · Dashboard</span></div>
+            <div style="background:#02250A;color:#7CDB84;font-weight:700;font-size:12px;padding:6px 12px">COHORT 3 · ATTENDANCE SUMMARY <span style="color:#B9D8BC;font-weight:400;font-style:italic">· Reads directly from session tabs</span></div>
+            <div class="sheet-scroll"><table class="grid"><tr style="background:#02250A"><th style="color:#FFF;background:#02250A">Student ID</th><th style="color:#FFF;background:#02250A">Fellow</th><th style="color:#FFF;background:#02250A">Track</th><th style="color:#FFF;background:#02250A">Wk1 Wed</th><th style="color:#FFF;background:#02250A">Wk1 Fri</th><th style="color:#FFF;background:#02250A">Wk2 Wed</th><th style="color:#FFF;background:#02250A">Wk2 Fri</th><th style="color:#FFF;background:#02250A">Wk3 Wed</th><th style="color:#FFF;background:#02250A">Wk3 Fri</th><th style="color:#FFF;background:#02250A">Wk4 Wed</th><th style="color:#FFF;background:#02250A">Wk4 Fri</th><th style="color:#FFF;background:#02250A">Wk5 Wed</th><th style="color:#FFF;background:#02250A">Wk5 Fri</th><th style="color:#FFF;background:#02250A">Wk6 Wed</th><th style="color:#FFF;background:#02250A">Wk6 Fri</th><th style="color:#FFF;background:#02250A">Wk7 Wed</th><th style="color:#FFF;background:#02250A">Wk7 Fri</th><th style="color:#FFF;background:#02250A">Wk8 Wed</th><th style="color:#FFF;background:#02250A">Wk8 Fri</th><th style="color:#FFF;background:#02250A">Wk9 Wed</th><th style="color:#FFF;background:#02250A">Wk9 Fri</th><th style="color:#FFF;background:#02250A">Wk10 Wed</th><th style="color:#FFF;background:#02250A">Wk10 Fri</th><th style="color:#FFF;background:#02250A">Attended</th><th style="color:#FFF;background:#02250A">Missed</th><th style="color:#FFF;background:#02250A">Standing</th></tr><tr><td>R2I-STEM-0101</td><td>Amaka Eze</td><td>STEM</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td class="num">18</td><td class="num">2</td><td><span class="chip-s" style="background:#D4EDDA;color:#1E6B34">ON TRACK</span></td></tr><tr><td>R2I-SHPE-0102</td><td>Kwame Asante</td><td>SHAPE</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td class="num">16</td><td class="num">4</td><td><span class="chip-s" style="background:#FFF3CD;color:#8A6200">AT RISK</span></td></tr><tr><td>R2I-STEM-0103</td><td>Lindiwe Dube</td><td>STEM</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td class="num">16</td><td class="num">4</td><td><span class="chip-s" style="background:#FFF3CD;color:#8A6200">AT RISK</span></td></tr><tr><td>R2I-SHPE-0104</td><td>Musa Danjuma</td><td>SHAPE</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td class="num">12</td><td class="num">8</td><td><span class="chip-s" style="background:#F8D7DA;color:#8E1B24">OUT</span></td></tr><tr><td>R2I-STEM-0105</td><td>Nia Wanjiru</td><td>STEM</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td class="num">17</td><td class="num">3</td><td><span class="chip-s" style="background:#FFF3CD;color:#8A6200">AT RISK</span></td></tr><tr><td>R2I-SHPE-0106</td><td>Omar Faye</td><td>SHAPE</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td style="text-align:center;background:#FDECEC;color:#C5221F;font-weight:600">A</td><td style="text-align:center;background:#E6F4EA;color:#188038;font-weight:600">P</td><td class="num">14</td><td class="num">6</td><td><span class="chip-s" style="background:#F8D7DA;color:#8E1B24">OUT</span></td></tr></table></div>
+            <div class="sheet-tabs"><span>Fellows_List</span><span>Dashboard</span><span class="on">Attendance_Summary</span><span>Score_Entry</span><span>Email_Log</span></div>
+          </div>
+          <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>The attendance summary reads straight from the raw session responses, so a fault in the processing log can never reach it.</span></figcaption>
+        </figure>
+
+        <div class="gallery two">
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">R2I Cohort 3 · Attendance Confirmed</span><span class="mail-from">Wale Lab · to Amaka</span></div>
+              <div class="mail-card">
+                <div style="background:#00A708;color:#FFFFFF;padding:16px 20px;text-align:center;border-bottom:4px solid #F7921E"><div style="font-weight:800;font-size:17px">Wale Lab | Wale University</div><div style="font-size:12px;font-weight:600">Research To Impact Fellowship · Cohort 3</div></div>
+                <div class="mail-body">
+                  <p>Dear Amaka,</p>
+                  <p>Your attendance at today's general session has been recorded.</p>
+                  <div style="background:#E6F4EA;border-radius:8px;padding:12px;text-align:center;color:#02250A"><div style="font-size:11px;letter-spacing:.1em;font-weight:700;color:#00A708">ATTENDANCE CONFIRMED</div><div style="font-size:26px;font-weight:800">12 of 20</div><div style="font-size:11px">sessions attended so far · Week 6, Friday</div></div>
+                  <table class="mtable"><tr><td>Student ID</td><td>R2I-STEM-0101</td></tr><tr><td>Track</td><td>STEM</td></tr><tr><td>Mentor</td><td>Sample Mentor A</td></tr></table>
+                  <p style="font-size:12px;background:#FFF5E9;padding:8px 10px;border-radius:6px;color:#7A4A0B"><b style="color:#7A4A0B">Graduation requirements:</b> 16 of 20 sessions · 3 of 4 seminars · 4 progress presentations · 10 weekly posts · manuscript · impact project · Demo Day pitch.</p>
+                </div>
+                <div class="mail-foot" style="background:#F7921E;color:#FFFFFF;display:grid;gap:6px;justify-items:center;padding:16px 20px"><span style="display:flex;gap:8px"><span style="display:inline-grid;place-items:center;width:30px;height:30px;border-radius:7px;background:#2B2B2B;color:#FFFFFF;font-size:11px;font-weight:700;font-family:Arial,sans-serif">in</span><span style="display:inline-grid;place-items:center;width:30px;height:30px;border-radius:7px;background:#2B2B2B;color:#FFFFFF;font-size:11px;font-weight:700;font-family:Arial,sans-serif">IG</span></span><span style="width:60%;border-top:1px solid rgba(255,255,255,.45)"></span><span style="font-weight:800;font-size:14px;color:#FFF6D6">Wale Lab | Wale University</span><span style="letter-spacing:.06em;color:#FFF6D6">Research to Impact Fellowship · Cohort 3</span><span style="font-size:10px;color:#FFF0E0">© Wale University. All rights reserved.</span></div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Same-day confirmation with a running count and the full graduation requirements.</span></figcaption>
+          </figure>
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">R2I Cohort 3 · Session Absence Noted</span><span class="mail-from">Wale Lab · to Musa</span></div>
+              <div class="mail-card">
+                <div style="background:#00A708;color:#FFFFFF;padding:16px 20px;text-align:center;border-bottom:4px solid #F7921E"><div style="font-weight:800;font-size:17px">Wale Lab | Wale University</div><div style="font-size:12px;font-weight:600">Research To Impact Fellowship · Cohort 3</div></div>
+                <div class="mail-body">
+                  <p>Dear Musa,</p>
+                  <p>Our records show you were not in attendance at today's general session.</p>
+                  <div style="background:#FDECEC;border-radius:8px;padding:12px;text-align:center;color:#5B1414"><div style="font-size:11px;letter-spacing:.1em;font-weight:700;color:#C5221F">ABSENCE RECORDED</div><div style="font-size:26px;font-weight:800">9 of 20</div><div style="font-size:11px">sessions attended so far · Week 6, Friday</div></div>
+                  <p style="font-size:12px;border-left:3px solid #F7921E;padding:6px 10px;background:#FFF5E9;color:#7A4A0B">If you submitted the attendance form but had a technical problem, contact the admin team <b style="color:#7A4A0B">within 48 hours</b> with evidence of your submission.</p>
+                  <span class="mail-btn" style="background:#00A708">Contact The Admin Team</span>
+                </div>
+                <div class="mail-foot" style="background:#F7921E;color:#FFFFFF;display:grid;gap:6px;justify-items:center;padding:16px 20px"><span style="display:flex;gap:8px"><span style="display:inline-grid;place-items:center;width:30px;height:30px;border-radius:7px;background:#2B2B2B;color:#FFFFFF;font-size:11px;font-weight:700;font-family:Arial,sans-serif">in</span><span style="display:inline-grid;place-items:center;width:30px;height:30px;border-radius:7px;background:#2B2B2B;color:#FFFFFF;font-size:11px;font-weight:700;font-family:Arial,sans-serif">IG</span></span><span style="width:60%;border-top:1px solid rgba(255,255,255,.45)"></span><span style="font-weight:800;font-size:14px;color:#FFF6D6">Wale Lab | Wale University</span><span style="letter-spacing:.06em;color:#FFF6D6">Research to Impact Fellowship · Cohort 3</span><span style="font-size:10px;color:#FFF0E0">© Wale University. All rights reserved.</span></div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Every absence comes with a 48-hour window to correct it, so a form glitch does not cost a fellow their attendance.</span></figcaption>
+          </figure>
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">Unverified Attendance Submissions · Wk6 Fri</span><span class="mail-from">Wale Lab · to Admin Team</span></div>
+              <div class="mail-card">
+                <div style="background:#00A708;color:#FFFFFF;padding:14px 20px;text-align:center;border-bottom:4px solid #F7921E"><div style="font-weight:800;font-size:16px">Wale Lab | Wale University</div></div>
+                <div class="mail-body">
+                  <p><b>Unverified Attendance Submissions</b></p>
+                  <p>These submissions could not be matched to any enrolled fellow. Resolve each one before the 48-hour correction window closes.</p>
+                  <table class="mtable"><tr><th>#</th><th>Name</th><th>Email</th><th>Student ID</th></tr><tr><td>1</td><td>A. Ezeh</td><td>unmatched1@example.com</td><td>R2I-STEM-01O1</td></tr><tr><td>2</td><td>Sample Name</td><td>unmatched2@example.com</td><td>None</td></tr></table>
+                  <p style="font-size:12px;color:#5F6368">Not recorded as present. No fellow email has been sent.</p>
+                  <span class="mail-btn" style="background:#02250A">Open Dashboard Sheet</span>
+                </div>
+<div class="mail-foot" style="background:#F7921E;color:#FFFFFF;display:grid;gap:6px;justify-items:center;padding:16px 20px"><span style="display:flex;gap:8px"><span style="display:inline-grid;place-items:center;width:30px;height:30px;border-radius:7px;background:#2B2B2B;color:#FFFFFF;font-size:11px;font-weight:700;font-family:Arial,sans-serif">in</span><span style="display:inline-grid;place-items:center;width:30px;height:30px;border-radius:7px;background:#2B2B2B;color:#FFFFFF;font-size:11px;font-weight:700;font-family:Arial,sans-serif">IG</span></span><span style="width:60%;border-top:1px solid rgba(255,255,255,.45)"></span><span style="font-weight:800;font-size:14px;color:#FFF6D6">Wale Lab | Wale University</span><span style="letter-spacing:.06em;color:#FFF6D6">Research to Impact Fellowship · Cohort 3</span><span style="font-size:10px;color:#FFF0E0">© Wale University. All rights reserved.</span></div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>The safety net behind four-pass matching: anything still unmatched goes to a human, never silently to Absent.</span></figcaption>
+          </figure>
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">R2I Cohort 3 · Weekly Attendance Summary</span><span class="mail-from">Wale Lab · to Admin Team</span></div>
+              <div class="mail-card">
+                <div style="background:#00A708;color:#FFFFFF;padding:14px 20px;text-align:center;border-bottom:4px solid #F7921E"><div style="font-weight:800;font-size:16px">Wale Lab | Wale University</div><div style="font-size:11px;letter-spacing:.14em">WEEKLY ATTENDANCE SUMMARY</div></div>
+                <div class="mail-body">
+                  <div class="tiles">
+                    <div class="tile" style="background:#F1F3F4;color:#202124"><b>12 / 20</b><span>Sessions Run</span></div>
+                    <div class="tile" style="background:#F1F3F4;color:#202124"><b>24</b><span>Fellows</span></div>
+                  </div>
+                  <div class="tiles">
+                    <div class="tile" style="background:#E6F4EA;color:#1E6B34"><b>15</b><span>On Track</span></div>
+                    <div class="tile" style="background:#FFF8E1;color:#B15C00"><b>6</b><span>At Risk</span></div>
+                    <div class="tile" style="background:#FDECEC;color:#C5221F"><b>3</b><span>Out</span></div>
+                  </div>
+                  <table class="mtable"><tr><th>Session</th><th class="num">Present</th><th class="num">Absent</th></tr><tr><td>Wk6 Wed</td><td class="num">20</td><td class="num">4</td></tr><tr><td>Wk6 Fri</td><td class="num">19</td><td class="num">5</td></tr></table>
+                </div>
+<div class="mail-foot" style="background:#F7921E;color:#FFFFFF;display:grid;gap:6px;justify-items:center;padding:16px 20px"><span style="display:flex;gap:8px"><span style="display:inline-grid;place-items:center;width:30px;height:30px;border-radius:7px;background:#2B2B2B;color:#FFFFFF;font-size:11px;font-weight:700;font-family:Arial,sans-serif">in</span><span style="display:inline-grid;place-items:center;width:30px;height:30px;border-radius:7px;background:#2B2B2B;color:#FFFFFF;font-size:11px;font-weight:700;font-family:Arial,sans-serif">IG</span></span><span style="width:60%;border-top:1px solid rgba(255,255,255,.45)"></span><span style="font-weight:800;font-size:14px;color:#FFF6D6">Wale Lab | Wale University</span><span style="letter-spacing:.06em;color:#FFF6D6">Research to Impact Fellowship · Cohort 3</span><span style="font-size:10px;color:#FFF0E0">© Wale University. All rights reserved.</span></div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>A Monday digest gives admins programme health without opening the sheet.</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="grading">
+        <h2><span class="n">05</span>Grading Model</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Component</th><th class="num">Weight</th></tr></thead>
+            <tbody>
+              <tr><td>Research Foundation</td><td class="num">5%</td></tr>
+              <tr><td>Invited Seminars</td><td class="num">5%</td></tr>
+              <tr><td>Presentation Skillset</td><td class="num">15%</td></tr>
+              <tr><td>Media Outreach</td><td class="num">5%</td></tr>
+              <tr><td>Impact Project</td><td class="num">35%</td></tr>
+              <tr><td>Manuscript</td><td class="num">35%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Tiers:</strong> Distinction 90% and above · Full Completion 80% to 89% · Non-Completion below 80%. <strong>Attendance bar:</strong> 16 of 20 general sessions.</p>
+        <figure class="figure mockwrap">
+          <div class="mock">
+            <div class="sheet-bar"><span class="sheet-icon"></span><span class="sheet-title">R2I Fellowship Cohort 3 · Dashboard</span></div>
+            <div style="background:#02250A;color:#7CDB84;font-weight:700;font-size:12px;padding:6px 12px">COHORT 3 · FELLOW DASHBOARD</div>
+            <div class="sheet-scroll"><table class="grid"><tr style="background:#00A708"><th style="color:#FFF;background:#00A708">Fellow</th><th style="color:#FFF;background:#00A708">Track</th><th style="color:#FFF;background:#00A708">Sessions /20</th><th style="color:#FFF;background:#00A708">Foundation /5</th><th style="color:#FFF;background:#00A708">Seminars /4</th><th style="color:#FFF;background:#00A708">Seminar /5</th><th style="color:#FFF;background:#00A708">Pres. Total /15</th><th style="color:#FFF;background:#00A708">Posts /10</th><th style="color:#FFF;background:#00A708">Media /5</th><th style="color:#FFF;background:#00A708">Impact /35</th><th style="color:#FFF;background:#00A708">Manuscript /35</th><th style="color:#FFF;background:#00A708">Final %</th><th style="color:#FFF;background:#00A708">Tier</th></tr><tr><td>Amaka Eze</td><td>STEM</td><td class="num">18</td><td class="num">4.50</td><td class="num">4</td><td class="num">5.00</td><td class="num">14.40</td><td class="num">10</td><td class="num">5.00</td><td class="num">33</td><td class="num">32</td><td class="num"><b>93.90</b></td><td><span class="chip-s" style="background:#D4EDDA;color:#1E6B34">DISTINCTION</span></td></tr><tr><td>Kwame Asante</td><td>SHAPE</td><td class="num">16</td><td class="num">4.00</td><td class="num">3</td><td class="num">3.75</td><td class="num">13.50</td><td class="num">8</td><td class="num">4.00</td><td class="num">29</td><td class="num">28</td><td class="num"><b>82.25</b></td><td><span class="chip-s" style="background:#E1E8F3;color:#33527F">FULL COMPLETION</span></td></tr><tr><td>Lindiwe Dube</td><td>STEM</td><td class="num">16</td><td class="num">4.00</td><td class="num">3</td><td class="num">3.75</td><td class="num">10.88</td><td class="num">9</td><td class="num">4.50</td><td class="num">30</td><td class="num">30</td><td class="num"><b>83.12</b></td><td><span class="chip-s" style="background:#E1E8F3;color:#33527F">FULL COMPLETION</span></td></tr><tr><td>Musa Danjuma</td><td>SHAPE</td><td class="num">12</td><td class="num">3.00</td><td class="num">2</td><td class="num">2.50</td><td class="num">8.25</td><td class="num">5</td><td class="num">2.50</td><td class="num">22</td><td class="num">20</td><td class="num"><b>58.25</b></td><td><span class="chip-s" style="background:#F8D7DA;color:#8E1B24">NON-COMPLETION</span></td></tr><tr><td>Nia Wanjiru</td><td>STEM</td><td class="num">17</td><td class="num">4.25</td><td class="num">4</td><td class="num">5.00</td><td class="num">14.10</td><td class="num">10</td><td class="num">5.00</td><td class="num">32</td><td class="num">31</td><td class="num"><b>91.35</b></td><td><span class="chip-s" style="background:#D4EDDA;color:#1E6B34">DISTINCTION</span></td></tr><tr><td>Omar Faye</td><td>SHAPE</td><td class="num">14</td><td class="num">3.50</td><td class="num">3</td><td class="num">3.75</td><td class="num">10.50</td><td class="num">7</td><td class="num">3.50</td><td class="num">25</td><td class="num">24</td><td class="num"><b>70.25</b></td><td><span class="chip-s" style="background:#F8D7DA;color:#8E1B24">NON-COMPLETION</span></td></tr></table></div>
+            <div class="sheet-tabs"><span>Fellows_List</span><span class="on">Dashboard</span><span>Attendance_Summary</span><span>Score_Entry</span><span>Email_Log</span></div>
+          </div>
+          <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Admins enter scores; the dashboard weights them and assigns the certification tier automatically.</span></figcaption>
+        </figure>
+      </section>
+
+      <section id="decisions">
+        <h2><span class="n">06</span>Key Decisions And Trade-Offs</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Decision</th><th>Why</th><th>Trade-Off</th></tr></thead>
+            <tbody>
+              <tr><td>Four-pass matching</td><td>Exact match marks real attendees absent</td><td>More complexity, with edge cases left for review</td></tr>
+              <tr><td>Raw responses as the source of truth</td><td>A live backfill bug showed the log could drift</td><td>More reconciliation logic</td></tr>
+              <tr><td>Split live and backfill processing</td><td>Live never overwrites; backfill can correct</td><td>Two modes to maintain</td></tr>
+              <tr><td>Convert word ratings to a 1 to 4 scale</td><td>Sessions become comparable</td><td>A fixed mapping</td></tr>
+              <tr><td>Hosted email icons</td><td>Gmail strips embedded SVGs</td><td>A dependency on an external asset</td></tr>
+              <tr><td>No merged cells</td><td>Frozen columns kept breaking</td><td>Less layout freedom</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="result">
+        <h2><span class="n">07</span>Result</h2>
+        <div class="results">
+          <div class="result"><span class="big">70+</span><span>Hours of manual work saved*</span></div>
+          <div class="result"><span class="big">164</span><span>Fellows tracked, graded and tiered from one source of truth</span></div>
+        </div>
+        <p class="footnote">* A conservative estimate of manual work removed, not an audited measurement. It counts only the attendance emails every fellow was certain to receive at 2 minutes each, plus session feedback reports at 15 minutes each and weekly summaries at 30 minutes each. Matching and flagged-submission handling are excluded.</p>
+      </section>
+
+      <section id="next">
+        <h2><span class="n">08</span>What I Would Do Next</h2>
+        <ul>
+          <li>A self-service fellow dashboard for attendance, scores and standing.</li>
+          <li>Automatic mentor escalation when a fellow reaches At Risk.</li>
+          <li>Automated verification of social media posts.</li>
+          <li>A reusable template for future cohorts.</li>
+        </ul>
+      </section>
+
+      <div class="next-case" data-next-case="wale-lab-r2i"></div>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span><strong style="color: var(--band-ink)">OLUWUMI OYEKANMI</strong> · Product Manager</span>
+    <nav aria-label="Footer">
+      <a href="../#about">About</a><a href="../#approach">Approach</a><a href="../#work">Case Studies</a><a href="../#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/projects.js"></script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

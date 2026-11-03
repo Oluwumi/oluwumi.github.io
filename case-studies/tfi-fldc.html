@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TFI FLDC Cohort 6 Tracker · Oluwumi Oyekanmi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="How I turned a graduation rule into an automated eligibility engine and bilingual reporting layer for 4,001 students across 40 learning groups.">
+<meta property="og:title" content="TFI FLDC Cohort 6 Tracker · Oluwumi Oyekanmi">
+<meta property="og:description" content="How I turned a graduation rule into an automated eligibility engine and bilingual reporting layer for 4,001 students across 40 learning groups.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-base="../">
+<a class="skip" href="#main">Skip To Content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../">OLUWUMI OYEKANMI</a>
+    <nav class="nav" aria-label="Main">
+      <a class="hide-sm" href="../#about">About</a>
+      <a class="hide-sm" href="../#approach">Approach</a>
+      <details class="dropdown">
+        <summary>Case Studies</summary>
+        <div class="dropdown-menu" data-case-menu></div>
+      </details>
+      <a href="../#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Switch Theme">&#9790;</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="cs-hero">
+    <div class="wrap">
+      <a class="back" href="../#work">&larr; All Case Studies</a>
+      <p class="eyebrow">Case Study 03 · Education</p>
+      <h1>TFI FLDC Cohort 6 Attendance And Graduation Tracker</h1>
+      <p class="cs-sub">Turning A Graduation Rule Into An Eligibility Engine</p>
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>Product Owner And Builder<small>Sub-Dean, Admissions And Graduation</small></dd></div>
+        <div><dt>Status</dt><dd><span class="status status-completed">Completed</span><small>Delivered for the full cohort</small></dd></div>
+        <div><dt>Users</dt><dd>Students · Facilitators · Fort Leaders · Programme Leadership</dd></div>
+        <div><dt>Platform</dt><dd>Google Sheets · Forms · Apps Script · Gmail<small>Built with Claude</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="wrap cs-layout">
+    <nav class="toc" aria-label="On This Page">
+      <p>On This Page</p>
+      <a href="#overview">Overview</a>
+      <a href="#problem">The Problem</a>
+      <a href="#users">Users</a>
+      <a href="#rules">Eligibility Rules</a>
+      <a href="#how">How It Works</a>
+      <a href="#decisions">Key Decisions</a>
+      <a href="#result">Result</a>
+    </nav>
+
+    <article class="article">
+      <section id="overview">
+        <h2><span class="n">01</span>Overview</h2>
+        <div class="results">
+          <div class="result"><span class="big">4,001</span><span>Students</span></div>
+          <div class="result"><span class="big">40</span><span>Learning groups</span></div>
+          <div class="result"><span class="big">10</span><span>Modules</span></div>
+          <div class="result"><span class="big">2</span><span>Languages</span></div>
+        </div>
+        <p class="lead">One rule: 70% attendance plus a capstone project to graduate. Attendance was tracked by hand, so nobody knew their standing until it was too late.</p>
+        <p>I translated the rule into an automated eligibility engine and a reporting layer that told every stakeholder where they stood, in English or French. The Fort Institute ran it for the Foundational Leadership Development Course (FLDC), Cohort 6.</p>
+        <div class="privacy"><span class="src src-recreated">Dummy Data</span><span>Every visual on this page is recreated from the live product with invented names, admission numbers and figures.</span></div>
+      </section>
+
+      <section id="problem">
+        <h2><span class="n">02</span>The Problem</h2>
+        <ul>
+          <li>Manual attendance tracking across 4,001 students and 40 forts (learning groups).</li>
+          <li>No early warning before a student lost eligibility.</li>
+          <li>A slow, error-prone final graduation list.</li>
+        </ul>
+      </section>
+
+      <section id="users">
+        <h2><span class="n">03</span>Users</h2>
+        <div class="users">
+          <div class="user"><h3>Students · 4,001</h3><p>Need to know their standing and what it takes to graduate.</p></div>
+          <div class="user"><h3>Facilitators</h3><p>Need attendance and honest feedback on their sessions.</p></div>
+          <div class="user"><h3>Fort Leaders · 80</h3><p>A governor and a deputy for each fort, who need their group's health at a glance.</p></div>
+          <div class="user"><h3>Programme Leadership</h3><p>Cohort president and vice president, dean, sub-dean and head of graduate success need a course-wide view.</p></div>
+        </div>
+      </section>
+
+      <section id="rules">
+        <h2><span class="n">04</span>Eligibility Rules</h2>
+        <p>Graduation needs 7 of 10 modules. I turned that into three statuses tied directly to the rule.</p>
+        <figure class="figure">
+          <div class="table-wrap" style="padding:16px">
+            <div class="ladder" role="img" aria-label="Sessions missed from 0 to 10: 0 is On Track, 1 to 3 is At Risk, 4 or more is Out">
+              <div class="lad-ok">0<small>On Track</small></div>
+              <div class="lad-risk">1<small>At Risk</small></div><div class="lad-risk">2<small>At Risk</small></div><div class="lad-risk">3<small>At Risk</small></div>
+              <div class="lad-out">4<small>Out</small></div><div class="lad-out">5</div><div class="lad-out">6</div><div class="lad-out">7</div><div class="lad-out">8</div><div class="lad-out">9</div><div class="lad-out">10</div>
+            </div>
+          </div>
+          <figcaption><span class="tagline"><span class="src src-diagram">Original Diagram</span></span><span>Sessions missed. At four, 7 of 10 can no longer be reached, so the student is Out.</span></figcaption>
+        </figure>
+      </section>
+
+      <section id="how">
+        <h2><span class="n">05</span>How It Works</h2>
+        <div class="flow">
+          <div class="flow-step hot"><span class="k">Identity</span><b>Admission Numbers</b><span>I introduced them: a cohort prefix plus a serial, emailed with the handbook.</span></div>
+          <div class="flow-step"><span class="k">Capture</span><b>Module Forms</b><span>Each module's attendance form feeds its own tab.</span></div>
+          <div class="flow-step hot"><span class="k">Source Of Truth</span><b>One Dashboard</b><span>Joins student records with every module tab.</span></div>
+          <div class="flow-step"><span class="k">Rules</span><b>Eligibility Engine</b><span>On Track, At Risk or Out for every student.</span></div>
+          <div class="flow-step"><span class="k">Delivery</span><b>Routed Reports</b><span>By role and by language, after every session.</span></div>
+        </div>
+
+        <figure class="figure mockwrap">
+          <div class="mock">
+            <div class="sheet-bar"><span class="sheet-icon"></span><span class="sheet-title">FLDC Cohort 6 · Dashboard</span></div>
+            <div class="sheet-scroll">
+              <table class="grid">
+                <tr style="background:#1F3B73"><th class="rowh" style="background:#1F3B73"></th><th style="color:#FFF;background:#1F3B73">Admission</th><th style="color:#FFF;background:#1F3B73">Surname</th><th style="color:#FFF;background:#1F3B73">First Name</th><th style="color:#FFF;background:#1F3B73">Fort</th><th style="color:#FFF;background:#1F3B73">Email</th><th style="color:#FFF;background:#1F3B73">Email (Typed)</th><th style="color:#FFF;background:#1F3B73">M1</th><th style="color:#FFF;background:#1F3B73">M2</th><th style="color:#FFF;background:#1F3B73">M3</th><th style="color:#FFF;background:#1F3B73">M4</th><th style="color:#FFF;background:#1F3B73">M5</th><th style="color:#FFF;background:#1F3B73">M6</th><th style="color:#FFF;background:#1F3B73">Status</th></tr>
+                <tr><td class="rowh">2</td><td>C60101</td><td>ADEBAYO</td><td>TOLU</td><td>Fort 3</td><td>student101@example.com</td><td>student101@example.com</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td><span class="chip-s" style="background:#D4EDDA;color:#1E6B34">ON TRACK</span></td></tr>
+                <tr><td class="rowh">3</td><td>C60102</td><td>MENSAH</td><td>AMA</td><td>Fort 11</td><td>student102@example.com</td><td>ama.m@example.com</td><td class="ok">&#10003;</td><td class="bad">&#10007;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="bad">&#10007;</td><td class="ok">&#10003;</td><td><span class="chip-s" style="background:#FFF3CD;color:#8A6200">AT RISK</span></td></tr>
+                <tr><td class="rowh">4</td><td>C60103</td><td>DIALLO</td><td>ISSA</td><td>Fort 2</td><td>student103@example.com</td><td>student103@example.com</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td><span class="chip-s" style="background:#D4EDDA;color:#1E6B34">ON TRACK</span></td></tr>
+                <tr><td class="rowh">5</td><td>C60104</td><td>OKAFOR</td><td>CHINEDU</td><td>Fort 27</td><td>student104@example.com</td><td>student104@example.com</td><td class="bad">&#10007;</td><td class="bad">&#10007;</td><td class="ok">&#10003;</td><td class="bad">&#10007;</td><td class="bad">&#10007;</td><td class="bad">&#10007;</td><td><span class="chip-s" style="background:#F8D7DA;color:#8E1B24">OUT</span></td></tr>
+                <tr><td class="rowh">6</td><td>C60105</td><td>BELLO</td><td>HAUWA</td><td>Fort 19</td><td>student105@example.com</td><td>hauwa.b@example.com</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="bad">&#10007;</td><td><span class="chip-s" style="background:#FFF3CD;color:#8A6200">AT RISK</span></td></tr>
+              </table>
+            </div>
+            <div class="sheet-tabs"><span class="on">Dashboard</span><span>Attendance M1</span><span>Attendance M2</span><span>Feedback</span></div>
+          </div>
+          <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>The single source of truth: every student checked against every module, with the email they typed kept beside the official one.</span></figcaption>
+        </figure>
+
+        <h3>Reporting For Every Stakeholder</h3>
+        <ul>
+          <li><strong>Students</strong> get an update after every session: sessions attended and sessions still needed. At-risk alerts, perfect attendance recognition and end-of-programme summaries complete the set. Students marked Out drop out of routine updates.</li>
+          <li><strong>Facilitators</strong> get an attendance summary, anonymised feedback and a thank-you for each fort and module.</li>
+          <li><strong>Fort leaders</strong> get their attendance rate, module trend and status mix.</li>
+          <li><strong>Leadership</strong> gets the course-wide view.</li>
+          <li><strong>Every message</strong> is routed in English or French, and sending is spread across organisation accounts to stay within 1,500 emails per account per day.</li>
+        </ul>
+
+        <div class="gallery two">
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">FLDC Cohort 6 · Your Week 3 Attendance Update</span><span class="mail-from">School of Leadership Development · to Ama</span></div>
+              <div class="mail-card">
+                <div style="background:#E70023;color:#FFFFFF;padding:16px 20px;text-align:center"><div style="font-weight:800;font-size:18px;letter-spacing:.04em">THE FORT INSTITUTE</div><div style="font-size:12px;font-weight:600">School of Leadership Development</div></div>
+                <div style="background:#F1F3F4;color:#5F6368;font-size:11px;padding:8px 20px;letter-spacing:.04em">FLDC › COHORT 6 › WEEK 3 ATTENDANCE REPORT</div>
+                <div class="mail-body">
+                  <p>Dear <b>AMA</b>,</p>
+                  <p>Here is a quick update on where you stand.</p>
+                  <div class="tiles">
+                    <div class="tile" style="background:#FFF8E1;color:#B15C00"><b>66.7%</b><span>Attendance Rate</span></div>
+                    <div class="tile" style="background:#E6F4EA;color:#1E6B34"><b>2</b><span>Attended</span></div>
+                    <div class="tile" style="background:#FDECEC;color:#C5221F"><b>5</b><span>Still Needed</span></div>
+                  </div>
+                  <p style="font-size:12px;background:#F8F9FA;padding:8px 10px;border-radius:6px">Admission Number: <b>C60102</b> · Fort: <b>Fort 11</b></p>
+                  <p>You can still graduate. Attend at least <b>5 more sessions</b> and complete your <b>Capstone Project</b>.</p>
+                </div>
+                <div class="mail-body" style="padding-top:0"><p>Warm regards,<br><b>Admissions And Graduation Team</b><br>School of Leadership Development<br>The Fort Institute</p></div><div class="mail-foot" style="display:grid;gap:6px;justify-items:center;background:#F8F9FA"><span>Foundational Leadership Development Course (FLDC) · Cohort 6</span><span style="font-size:10px">© The Fort Institute for Leadership Development LTD/GTE</span><span style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center"><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">IG</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">in</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">f</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">@</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">WA</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">TT</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">X</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">YT</span></span></div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Each student learns their standing after every session, and exactly how many sessions they still need.</span></figcaption>
+          </figure>
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">Module 3 Report · Fort 11</span><span class="mail-from">School of Leadership Development · to Facilitator</span></div>
+              <div class="mail-card">
+                <div style="background:#E70023;color:#FFFFFF;padding:16px 20px;text-align:center"><div style="font-weight:800;font-size:17px">School of Leadership Development</div><div style="font-size:11px;letter-spacing:.18em">FACILITATOR REPORT</div></div>
+                <div class="mail-body">
+                  <p>Thank you for facilitating this week's session. Below is the attendance summary and anonymous participant feedback for your fort.</p>
+                  <div class="tiles">
+                    <div class="tile" style="background:#F8F9FA;color:#202124"><b>96</b><span>Registered</span></div>
+                    <div class="tile" style="background:#E6F4EA;color:#1E6B34"><b>71</b><span>Present</span></div>
+                    <div class="tile" style="background:#FDECEC;color:#C5221F"><b>25</b><span>Absent</span></div>
+                    <div class="tile" style="background:#E70023;color:#FFFFFF"><b>74%</b><span>Rate</span></div>
+                  </div>
+                  <p style="color:#E70023;font-size:11px;font-weight:700;letter-spacing:.14em">PARTICIPANT FEEDBACK · ALL RESPONSES ANONYMOUS</p>
+                  <table class="mtable"><tr><td style="font-weight:400">The practical examples made the session easy to apply.</td></tr><tr><td style="font-weight:400">I would like more time for questions at the end.</td></tr><tr><td style="font-weight:400">Clear and engaging. I look forward to the next module.</td></tr></table>
+                </div>
+                <div class="mail-body" style="padding-top:0"><p>Warm regards,<br><b>School of Leadership Development</b><br>The Fort Institute</p></div><div class="mail-foot" style="display:grid;gap:6px;justify-items:center;background:#F8F9FA"><span>Foundational Leadership Development Course (FLDC) · Cohort 6</span><span style="font-size:10px">© The Fort Institute for Leadership Development LTD/GTE</span><span style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center"><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">IG</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">in</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">f</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">@</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">WA</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">TT</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">X</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">YT</span></span></div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Facilitators receive honest feedback with every name removed, plus a thank-you.</span></figcaption>
+          </figure>
+        </div>
+
+        <h3>Same Report, Two Languages</h3>
+        <div class="gallery two">
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">FLDC Cohort 6 · Week 3 Attendance Report · Fort 11</span><span class="mail-from">to Fort Governor</span></div>
+              <div class="mail-card">
+                <div style="background:#E70023;color:#FFFFFF;padding:14px 20px;text-align:center"><div style="font-weight:800;font-size:17px;letter-spacing:.04em">THE FORT INSTITUTE</div></div>
+                <div class="mail-body">
+                  <p>Here is the attendance summary for <b>Fort 11</b> following today's session.</p>
+                  <div class="tiles">
+                    <div class="tile" style="background:#202124;color:#7EE08A"><b>96</b><span style="color:#E8EAED">Registered</span></div>
+                    <div class="tile" style="background:#202124;color:#7EE08A"><b>71</b><span style="color:#E8EAED">Present</span></div>
+                    <div class="tile" style="background:#202124;color:#FF6B6B"><b>25</b><span style="color:#E8EAED">Absent</span></div>
+                  </div>
+                  <table class="mtable">
+                    <tr style="background:#E70023"><th style="color:#FFF">Module</th><th style="color:#FFF" class="num">Present</th><th style="color:#FFF" class="num">Rate</th></tr>
+                    <tr><td>Module 1</td><td class="num">80</td><td class="num">83.3%</td></tr>
+                    <tr><td>Module 2</td><td class="num">76</td><td class="num">79.2%</td></tr>
+                    <tr><td>Module 3</td><td class="num">71</td><td class="num">74.0%</td></tr>
+                    <tr><td>Module 4</td><td colspan="2" style="color:#9AA0A6;font-style:italic">upcoming</td></tr>
+                  </table>
+                  <div class="tiles">
+                    <div class="tile" style="background:#E6F4EA;color:#1E6B34"><b>64</b><span>On Track</span></div>
+                    <div class="tile" style="background:#FFF8E1;color:#B15C00"><b>32</b><span>At Risk</span></div>
+                    <div class="tile" style="background:#FDECEC;color:#C5221F"><b>0</b><span>Out</span></div>
+                  </div>
+                </div>
+<div class="mail-foot" style="display:grid;gap:6px;justify-items:center;background:#F8F9FA"><span>Foundational Leadership Development Course (FLDC) · Cohort 6</span><span style="font-size:10px">© The Fort Institute for Leadership Development LTD/GTE</span><span style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center"><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">IG</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">in</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">f</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">@</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">WA</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">TT</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">X</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">YT</span></span></div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Fort leaders see the trend by module and how many members are on track.</span></figcaption>
+          </figure>
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">FLDC Cohorte 6 · Semaine 3 : Rapport De Présence · Fort 2</span><span class="mail-from">au Gouverneur du Fort</span></div>
+              <div class="mail-card">
+                <div style="background:#E70023;color:#FFFFFF;padding:14px 20px;text-align:center"><div style="font-weight:800;font-size:17px;letter-spacing:.04em">THE FORT INSTITUTE</div></div>
+                <div class="mail-body">
+                  <p>Voici le résumé de présence pour le <b>Fort 2</b> à l'issue de la séance d'aujourd'hui.</p>
+                  <div class="tiles">
+                    <div class="tile" style="background:#202124;color:#7EE08A"><b>48</b><span style="color:#E8EAED">Inscrits</span></div>
+                    <div class="tile" style="background:#202124;color:#7EE08A"><b>37</b><span style="color:#E8EAED">Présents</span></div>
+                    <div class="tile" style="background:#202124;color:#FF6B6B"><b>11</b><span style="color:#E8EAED">Absents</span></div>
+                  </div>
+                  <table class="mtable">
+                    <tr style="background:#E70023"><th style="color:#FFF">Module</th><th style="color:#FFF" class="num">Présents</th><th style="color:#FFF" class="num">Taux</th></tr>
+                    <tr><td>Module 1</td><td class="num">41</td><td class="num">85.4%</td></tr>
+                    <tr><td>Module 2</td><td class="num">39</td><td class="num">81.3%</td></tr>
+                    <tr><td>Module 3</td><td class="num">37</td><td class="num">77.1%</td></tr>
+                    <tr><td>Module 4</td><td colspan="2" style="color:#9AA0A6;font-style:italic">à venir</td></tr>
+                  </table>
+                  <div class="tiles">
+                    <div class="tile" style="background:#E6F4EA;color:#1E6B34"><b>32</b><span>En Règle</span></div>
+                    <div class="tile" style="background:#FFF8E1;color:#B15C00"><b>16</b><span>À Risque</span></div>
+                    <div class="tile" style="background:#FDECEC;color:#C5221F"><b>0</b><span>Éliminés</span></div>
+                  </div>
+                </div>
+<div class="mail-foot" style="display:grid;gap:6px;justify-items:center;background:#F8F9FA"><span>Foundational Leadership Development Course (FLDC) · Cohort 6</span><span style="font-size:10px">© The Fort Institute for Leadership Development LTD/GTE</span><span style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center"><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">IG</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">in</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">f</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">@</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">WA</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">TT</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">X</span><span style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#E8EAED;color:#202124;font-size:9.5px;font-weight:700;font-family:Arial,sans-serif">YT</span></span></div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>French-speaking leaders receive the same report in French, routed automatically.</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="decisions">
+        <h2><span class="n">06</span>Key Decisions And Trade-Offs</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Decision</th><th>Why</th><th>Trade-Off</th></tr></thead>
+            <tbody>
+              <tr><td>Introduce admission numbers</td><td>Names cannot reliably match thousands of records</td><td>A new identifier to roll out to every student</td></tr>
+              <tr><td>Status tied to the graduation rule</td><td>A status means more than a raw percentage</td><td>Tied to this programme's rule</td></tr>
+              <tr><td>Anonymise feedback</td><td>Honest input, with no exposure for students</td><td>No individual follow-up</td></tr>
+              <tr><td>Route by language</td><td>Equal access for French speakers</td><td>Two sets of templates to maintain</td></tr>
+              <tr><td>Distribute sending</td><td>Stay within platform limits</td><td>Coordination across several accounts</td></tr>
+              <tr><td>Stop updates at Out</td><td>Messages must stay actionable</td><td>Routine and other messages need separate logic</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="result">
+        <h2><span class="n">07</span>Result</h2>
+        <div class="results">
+          <div class="result"><span class="big">700+</span><span>Hours of manual work saved*</span></div>
+          <div class="result"><span class="big">4,001</span><span>Students tracked through to the final list</span></div>
+        </div>
+        <p class="footnote">* A conservative estimate of manual work removed, not an audited measurement. It counts only work that certainly happened: 4,001 admission emails and 12,003 weekly student updates at 2 minutes each, 400 facilitator reports at 15 minutes each and 400 fort leader reports at 10 minutes each. Later updates, leadership reports and alerts are excluded.</p>
+      </section>
+
+      <div class="next-case" data-next-case="tfi-fldc"></div>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span><strong style="color: var(--band-ink)">OLUWUMI OYEKANMI</strong> · Product Manager</span>
+    <nav aria-label="Footer">
+      <a href="../#about">About</a><a href="../#approach">Approach</a><a href="../#work">Case Studies</a><a href="../#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/projects.js"></script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

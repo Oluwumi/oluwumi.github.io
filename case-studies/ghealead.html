@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GHEALEAD Case Study · Oluwumi Oyekanmi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="How I reframed a trauma recovery course into a live virtual therapy platform: requirements, product decisions, MVP scope and launch metrics.">
+<meta property="og:title" content="GHEALEAD Case Study · Oluwumi Oyekanmi">
+<meta property="og:description" content="From a course to a live therapy platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-base="../">
+<a class="skip" href="#main">Skip To Content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../">OLUWUMI OYEKANMI</a>
+    <nav class="nav" aria-label="Main">
+      <a class="hide-sm" href="../#about">About</a>
+      <a class="hide-sm" href="../#approach">Approach</a>
+      <details class="dropdown">
+        <summary>Case Studies</summary>
+        <div class="dropdown-menu" data-case-menu></div>
+      </details>
+      <a href="../#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Switch Theme">&#9790;</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="cs-hero">
+    <div class="wrap">
+      <a class="back" href="../#work">&larr; All Case Studies</a>
+      <p class="eyebrow">Case Study 01 · Healthtech</p>
+      <h1>GHEALEAD</h1>
+      <p class="cs-sub">From A Course To A Live Therapy Platform</p>
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>Product And Operations Manager</dd></div>
+        <div><dt>Status</dt><dd><span class="status status-live">Live</span><small>Not yet publicly launched</small></dd></div>
+        <div><dt>Users</dt><dd>Clients · Therapists · Admins</dd></div>
+        <div><dt>Platform</dt><dd>Web Application</dd></div>
+      </dl>
+    </div>
+  </section>
+
+
+  <section class="spotlight">
+    <div class="wrap">
+      <div class="spot-text">
+        <p class="eyebrow" style="color: var(--coral-ink)">Spotlight · The Client Dashboard</p>
+        <h2>One Clear Next Step.</h2>
+        <p>The client dashboard is the product's front door. A new client sees one thing first: the pre-assessment. Nothing else competes for attention until screening is done.</p>
+        <ul class="spot-points">
+          <li><b>1</b> primary action for a new client: Begin Assessment</li>
+          <li><b>3</b> session counts once paid: purchased, completed and remaining</li>
+          <li>Payment history and receipts in the same view</li>
+          <li>Contact Support always one tap away</li>
+        </ul>
+      </div>
+      <figure class="figure spot-visual">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span>ghealead.com/dashboard</span></div>
+          <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/client-dashboard.webp" alt="GHEALEAD client dashboard for a new account, showing a pre-assessment prompt and an empty payment history" width="1920" height="968"></button>
+        </div>
+        <figcaption>
+          <span class="tagline"><span class="src src-real">Live Product Screenshot</span></span>
+          <span>The live client dashboard for a new account. Messages and Resources appear greyed out because they are planned for later iterations, and Progress activates once sessions begin.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="wrap cs-layout">
+    <nav class="toc" aria-label="On This Page">
+      <p>On This Page</p>
+      <a href="#overview">Overview</a>
+      <a href="#reframe">The Reframe</a>
+      <a href="#users">Users</a>
+      <a href="#journey">The Core Journey</a>
+      <a href="#decisions">Key Decisions</a>
+      <a href="#prd">PRD Excerpt</a>
+      <a href="#scope">Live Now Vs Next</a>
+      <a href="#metrics">Early Signal And Metrics</a>
+    </nav>
+
+    <article class="article">
+      <section id="overview">
+        <h2><span class="n">01</span>Overview</h2>
+        <p class="lead">A client asked for a trauma recovery course. I saw that content alone could not deliver recovery: people needed screening, a qualified therapist and continuity of care.</p>
+        <p>I reframed the product as a virtual therapy platform, wrote the requirements, owned the product decisions across every journey and tested it through to release. It is live at <a href="https://ghealead.com" rel="noopener">ghealead.com</a> and has not yet been publicly launched.</p>
+      </section>
+
+      <section id="reframe">
+        <h2><span class="n">02</span>The Reframe</h2>
+        <div class="reframe">
+          <div><span class="k">The Ask</span><span class="v">A trauma recovery course.</span></div>
+          <div class="is-real"><span class="k">The Real Job To Be Done</span><span class="v">Get a person safely from "I need help" to ongoing sessions with the right therapist.</span></div>
+        </div>
+        <p>A course could not answer the questions that mattered. Who is suitable for virtual therapy? Who decides? How is a client matched, charged, booked and cared for over time?</p>
+        <p>Those are the questions of a service, not of content. I expanded the scope from content to service.</p>
+        <div class="callout"><span class="label">Trade-Off</span><p>A larger MVP and a longer build, in exchange for a product that could actually deliver recovery support.</p></div>
+      </section>
+
+      <section id="users">
+        <h2><span class="n">03</span>Users</h2>
+        <div class="users">
+          <div class="user"><h3>Clients</h3><p>Need a safe route into care, a clear status at every step and control over their sessions.</p></div>
+          <div class="user"><h3>Therapists</h3><p>Need their availability, their assigned clients and a place to document care.</p></div>
+          <div class="user"><h3>Admins</h3><p>Run intake, matching, payments, sessions and access. Permissions are set per role, and the lead therapist works as an admin-type user.</p></div>
+        </div>
+      </section>
+
+      <section id="journey">
+        <h2><span class="n">04</span>The Core Journey</h2>
+        <ol class="journey">
+          <li><b>Screen</b><span>The client registers, verifies their email, completes a pre-assessment and accepts the terms. It is a suitability screen, not a diagnosis.</span></li>
+          <li><b>Review</b><span>The lead therapist approves or declines each application in the admin pipeline.</span>
+            <div class="branch"><b>If Declined:</b> the applicant automatically receives an email with partner care options.</div></li>
+          <li><b>Approve And Pay</b><span>Approved clients choose a plan and pay through a payment gateway, in multiple currencies.</span></li>
+          <li><b>Match</b><span>The lead therapist assigns a therapist manually, guided by specialisation tags.</span></li>
+          <li><b>Book</b><span>The client books from the therapist's availability. Current rule: one session per week. Rescheduling is supported and the therapist is notified by email.</span></li>
+          <li><b>Deliver</b><span>An admin attaches a Google Meet link and both parties join from the app.</span></li>
+          <li><b>Document</b><span>The therapist logs notes, progress and attendance or no-shows.</span></li>
+          <li><b>Track</b><span>The client dashboard shows sessions purchased, completed and remaining, plus progress.</span></li>
+        </ol>
+        <p><strong>All notifications go by email.</strong></p>
+
+        <h3>Intake And Matching</h3>
+        <div class="gallery two">
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/admin-preassessment-pending.webp" alt="Admin pre-assessment review pipeline with tabs for pending approval, awaiting payment, awaiting therapist and denied" width="1431" height="1015" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>The review pipeline moves every applicant through Pending Approval, Awaiting Payment, Awaiting Therapist or Denied.</span></figcaption>
+          </figure>
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/admin-assign-therapist.webp" alt="Assign counsellor dialog listing available therapists with their specialisations" width="1430" height="1017" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>Manual matching: the lead therapist sees each client's need next to each therapist's specialisation and availability.</span></figcaption>
+          </figure>
+        </div>
+        <div class="email-pair">
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/email-approved.webp" alt="Approval email inviting the client to choose a payment plan" width="679" height="907" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>Approval email: payment is only requested after the screen is passed.</span></figcaption>
+          </figure>
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/email-declined.webp" alt="Decline email recommending partner hospitals or care centres" width="678" height="978" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>Decline email: every declined applicant leaves with a referral, never a dead end.</span></figcaption>
+          </figure>
+        </div>
+
+        <h3>Sessions And Payments</h3>
+        <div class="gallery two">
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/admin-sessions.webp" alt="Admin sessions list with status and meeting link columns" width="1442" height="1024" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>Every session in one list, with status and meeting link.</span></figcaption>
+          </figure>
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/admin-add-meeting-link.webp" alt="Add meeting link dialog over the sessions list" width="1442" height="1024" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>The interim video step: an admin attaches a Google Meet link to the session record.</span></figcaption>
+          </figure>
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/admin-packages.webp" alt="Subscription packages screen showing three therapy tiers" width="1438" height="1026" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>Therapy plans are configured as packages, each with its own session entitlement.</span></figcaption>
+          </figure>
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/admin-receipt.webp" alt="Transaction details dialog showing payment method, status and receipt number" width="1440" height="1023" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>Every payment has a receipt and a full transaction record.</span></figcaption>
+          </figure>
+        </div>
+
+        <h3>Access And Configuration</h3>
+        <div class="gallery">
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/admin-edit-permissions.webp" alt="Edit admin details dialog with a permissions field" width="1442" height="1023" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>Role-based permissions: each admin sees only what their job needs.</span></figcaption>
+          </figure>
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/admin-therapists.webp" alt="Therapist management list with specialisations and status" width="1440" height="1025" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>Therapist management, with specialisations visible on every record.</span></figcaption>
+          </figure>
+          <figure class="figure">
+            <button class="shot" type="button" aria-label="Enlarge screenshot"><img src="../assets/img/ghealead/admin-specialisations.webp" alt="Specialisation list including family therapy, PTSD, CBT and anxiety" width="1440" height="1021" loading="lazy"></button>
+            <figcaption><span class="tagline"><span class="src src-real">Product Design · Live Feature</span></span><span>Specialisation tags power the manual matching decision.</span></figcaption>
+          </figure>
+        </div>
+        <p class="footnote">Screens show sample data from the product designs. Items shown in navigation but not yet active are planned for later iterations.</p>
+      </section>
+
+      <section id="decisions">
+        <h2><span class="n">05</span>Key Decisions And Trade-Offs</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Decision</th><th>Why</th><th>Trade-Off</th></tr></thead>
+            <tbody>
+              <tr><td>Expand a course into a therapy platform</td><td>Recovery needs screening, a therapist and continuity</td><td>A larger scope and a longer build</td></tr>
+              <tr><td>Screen before payment</td><td>Nobody pays for care the platform cannot safely provide</td><td>A longer path to conversion</td></tr>
+              <tr><td>Decline with automatic referral</td><td>No applicant leaves without a next step</td><td>More scope at launch</td></tr>
+              <tr><td>Manual matching, guided by specialisation tags</td><td>Clinical judgement stays with the lead therapist at low volume</td><td>Will not scale on its own</td></tr>
+              <tr><td>Google Meet as an interim step</td><td>Unblocked launch without native video</td><td>Users leave the app to join</td></tr>
+              <tr><td>Role-based admin permissions</td><td>Support staff can help clients without seeing personal data</td><td>More setup for each admin</td></tr>
+              <tr><td>Ship the core journey first</td><td>Screening, payment, booking and sessions are the product</td><td>Resources, messaging and analytics move to later iterations</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="prd">
+        <h2><span class="n">06</span>PRD Excerpt</h2>
+        <div class="prd">
+          <div class="prd-head"><h3>Product Requirements</h3><span class="src src-diagram">Reconstructed For This Portfolio</span></div>
+          <p><strong>Objective:</strong> enable clients to apply for virtual trauma recovery support, pass suitability screening, pay for an approved plan and receive ongoing sessions with a matched therapist.</p>
+          <div class="story"><span class="id">US1 · Apply</span><p>As a prospective client, I want to complete a pre-assessment so that my application can be reviewed.</p><p class="ac"><strong>Acceptance:</strong> email verified · required fields complete · terms accepted before submission · application enters the pending queue · status visible to the client.</p></div>
+          <div class="story"><span class="id">US2 · Review</span><p>As the lead therapist, I want to approve or decline applications so that only suitable clients proceed.</p><p class="ac"><strong>Acceptance:</strong> pending applications listed · approval triggers the payment email · decline triggers the referral email.</p></div>
+          <div class="story"><span class="id">US3 · Match</span><p>As the lead therapist, I want to assign a therapist to a paid client so that they can book.</p><p class="ac"><strong>Acceptance:</strong> therapists listed with specialisations · assignment is manual · therapist linked to the client record.</p></div>
+          <div class="story"><span class="id">US4 · Book</span><p>As a client, I want to book from my therapist's availability so that I can start sessions.</p><p class="ac"><strong>Acceptance:</strong> open slots shown · booking and rescheduling supported · therapist emailed on booking · admin can attach a meeting link.</p></div>
+          <div class="story"><span class="id">US5 · Document</span><p>As a therapist, I want to record notes and attendance so that care is continuous.</p><p class="ac"><strong>Acceptance:</strong> notes saved per session · attendance or no-show marked · history retained.</p></div>
+          <div class="story"><span class="id">Business Rules</span>
+            <div class="rules"><span>Screening before approval</span><span>Payment only after approval</span><span>Referral on decline</span><span>Manual matching by specialisation</span><span>One session per week</span><span>Manual attendance</span><span>Email-only notifications</span><span>Role-based admin permissions</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scope">
+        <h2><span class="n">07</span>Live Now Vs Next</h2>
+        <div class="scope">
+          <div class="live">
+            <h3><span class="status status-live">Live</span> Live Now</h3>
+            <div><h4>Client</h4><ul><li>Sign-up and email verification</li><li>Pre-assessment and application status</li><li>Plan selection and multi-currency payment</li><li>Session entitlements and progress</li><li>Booking and rescheduling</li><li>Meeting links</li><li>Payment history and receipts</li><li>Settings and Contact Support</li></ul></div>
+            <div><h4>Therapist</h4><ul><li>Availability</li><li>Assigned clients and intake forms</li><li>Session notes and attendance</li><li>Session history</li></ul></div>
+            <div><h4>Admin</h4><ul><li>Application pipeline and manual matching</li><li>Client and therapist management</li><li>Specialisations and packages</li><li>Payments, receipts and export</li><li>Meeting links</li><li>Role-based permissions and currency settings</li><li>Audit logs and email templates</li></ul></div>
+          </div>
+          <div class="next">
+            <h3><span class="status status-concept">Next</span> Later Iterations</h3>
+            <ul><li>Resource library</li><li>In-app messaging</li><li>Analytics</li><li>Native video</li><li>Blog</li><li>Individual resource purchases</li><li>Admin growth dashboard</li><li>Therapist goals and milestones</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="metrics">
+        <h2><span class="n">08</span>Early Signal And Success Metrics</h2>
+        <p class="lead">Before any marketing, two prospective users registered and completed screening.</p>
+        <p>That is a demand signal, not product-market fit, and its source is unknown. These are the metrics I would track from launch:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Proposed Metric</th><th>Question It Answers</th></tr></thead>
+            <tbody>
+              <tr><td>Screening Completion Rate</td><td>Do applicants finish intake?</td></tr>
+              <tr><td>Approval-To-Payment Conversion</td><td>Do approved clients commit?</td></tr>
+              <tr><td>Time To Match</td><td>How long from payment to therapist?</td></tr>
+              <tr><td>First-Session Booking Rate</td><td>Does matching lead to care?</td></tr>
+              <tr><td>Session Attendance Rate</td><td>Do clients show up?</td></tr>
+              <tr><td>Session Utilisation</td><td>Do clients use what they buy?</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="next-case" data-next-case="ghealead"></div>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span><strong style="color: var(--band-ink)">OLUWUMI OYEKANMI</strong> · Product Manager</span>
+    <nav aria-label="Footer">
+      <a href="../#about">About</a><a href="../#approach">Approach</a><a href="../#work">Case Studies</a><a href="../#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/projects.js"></script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

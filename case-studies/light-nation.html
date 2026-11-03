@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Light Nation Follow-Up System · Oluwumi Oyekanmi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="How I shipped three versions of a decentralised visitor follow-up platform, including a rebuild after a platform suspension, now live across five branches.">
+<meta property="og:title" content="Light Nation Follow-Up System · Oluwumi Oyekanmi">
+<meta property="og:description" content="How I shipped three versions of a decentralised visitor follow-up platform, including a rebuild after a platform suspension, now live across five branches.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-base="../">
+<a class="skip" href="#main">Skip To Content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../">OLUWUMI OYEKANMI</a>
+    <nav class="nav" aria-label="Main">
+      <a class="hide-sm" href="../#about">About</a>
+      <a class="hide-sm" href="../#approach">Approach</a>
+      <details class="dropdown">
+        <summary>Case Studies</summary>
+        <div class="dropdown-menu" data-case-menu></div>
+      </details>
+      <a href="../#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Switch Theme">&#9790;</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="cs-hero">
+    <div class="wrap">
+      <a class="back" href="../#work">&larr; All Case Studies</a>
+      <p class="eyebrow">Case Study 02 · Community Engagement</p>
+      <h1>Light Nation Follow-Up System</h1>
+      <p class="cs-sub">Three Versions To A Follow-Up Platform That Holds</p>
+      <dl class="cs-meta">
+        <div><dt>Role</dt><dd>Product Manager (Follow-Up System)</dd></div>
+        <div><dt>Status</dt><dd><span class="status status-live">Live</span><small>Still in use after handover</small></dd></div>
+        <div><dt>Users</dt><dd>Admin · Buddies · QA Team · Supervisors</dd></div>
+        <div><dt>Platform</dt><dd>Google Sheets · Forms · Apps Script · Gmail<small>Built with Claude</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+
+  <section class="spotlight stack">
+    <div class="wrap">
+      <div class="spot-text">
+        <p class="eyebrow" style="color: var(--coral-ink)">Spotlight · The QA Dashboard</p>
+        <h2>Every Call, Reviewed.</h2>
+        <p>Each QA member gets a private dashboard with one tab per buddy they oversee. They read every call log in context, score it against a fixed rubric and flag what needs attention. Ratings write back to the master sheet and feed every monthly report.</p>
+        <ul class="spot-points">
+          <li><b>3</b> ratings from 1 to 5: Call Quality, Log Detail, Tone And Approach</li>
+          <li><b>2</b> checks: Issues Addressed, Follow-Up Taken</li>
+          <li><b>1</b> flag: Commend, Needs Coaching or Escalate</li>
+          <li>Ratings survive every refresh, so no review is ever lost</li>
+        </ul>
+      </div>
+      <figure class="figure mockwrap spot-visual">
+        <div class="mock">
+          <div class="sheet-bar"><span class="sheet-icon"></span><span class="sheet-title">LIGHT NATION HQ · QA: Sample Reviewer</span></div>
+          <div class="sheet-scroll">
+            <table class="grid" style="font-size:11px">
+              <tr><th class="rowh" style="background:#141414"></th><th style="color:#FFF;background:#141414">FULL NAME</th><th style="color:#FFF;background:#141414">WK 1 FIRST CALL</th><th style="color:#FFF;background:#141414">STATUS</th><th style="color:#FFF;background:#FF4500">CALL<br>QUALITY</th><th style="color:#FFF;background:#FF4500">LOG<br>DETAIL</th><th style="color:#FFF;background:#FF4500">TONE</th><th style="color:#FFF;background:#FF4500">ISSUES<br>ADDRESSED</th><th style="color:#FFF;background:#FF4500">FOLLOW-UP<br>TAKEN</th><th style="color:#FFF;background:#FF4500">FLAG</th></tr>
+              <tr><td class="rowh">2</td><td>Ada Nwankwo</td><td>Enjoyed the welcome, will come back.</td><td><span class="chip-s" style="background:#D4EDDA;color:#1E6B34">ESTABLISHED</span></td><td style="text-align:center">5</td><td style="text-align:center">5</td><td style="text-align:center">5</td><td>Yes</td><td>Yes</td><td><span class="chip-s" style="background:#D4EDDA;color:#1E6B34">COMMEND</span></td></tr>
+              <tr><td class="rowh">3</td><td>Bayo Kareem</td><td>Visiting from another city.</td><td><span class="chip-s" style="background:#FFF3CD;color:#8A6200">VISITING</span></td><td style="text-align:center">4</td><td style="text-align:center">3</td><td style="text-align:center">4</td><td>Partial</td><td>Yes</td><td><span class="chip-s" style="background:#FFF3CD;color:#8A6200">NEEDS COACHING</span></td></tr>
+              <tr><td class="rowh">4</td><td>Chika Obi</td><td>Called. No answer.</td><td></td><td style="text-align:center">1</td><td style="text-align:center">1</td><td style="text-align:center">2</td><td>No</td><td>No</td><td><span class="chip-s" style="background:#F8D7DA;color:#8E1B24">ESCALATE</span></td></tr>
+              <tr><td class="rowh">5</td><td>Dele Ade</td><td>Good call, asked about groups.</td><td></td><td style="text-align:center">4</td><td style="text-align:center">4</td><td style="text-align:center">5</td><td>Yes</td><td>Partial</td><td><span class="chip-s" style="background:#D4EDDA;color:#1E6B34">COMMEND</span></td></tr>
+            </table>
+          </div>
+          <div class="sheet-tabs"><span>Overview</span><span>Monthly Reports</span><span class="on">Tobi</span><span>Ifeoma</span><span>Kunle</span><span>Zainab</span></div>
+        </div>
+        <div class="mock" style="margin-top:14px">
+          <div class="sheet-bar"><span class="sheet-icon"></span><span class="sheet-title">LIGHT NATION HQ · QA: Sample Reviewer · Monthly Reports</span></div>
+          <div class="sheet-scroll">
+            <table class="grid">
+              <tr><th style="color:#FFF;background:#141414">BUDDY</th><th style="color:#FFF;background:#141414">METRIC</th><th style="color:#FFF;background:#141414">JANUARY 2026</th><th style="color:#FFF;background:#141414">FEBRUARY 2026</th><th style="color:#FFF;background:#141414">MARCH 2026</th><th style="color:#FFF;background:#141414">ALL-TIME</th></tr>
+              <tr><td><b>Tobi</b></td><td>Assigned</td><td class="num">6</td><td class="num">7</td><td class="num">8</td><td class="num">21</td></tr>
+              <tr><td></td><td>Established %</td><td class="num">33%</td><td class="num">29%</td><td class="num">25%</td><td class="num">29%</td></tr>
+              <tr><td></td><td>Visiting %</td><td class="num">17%</td><td class="num">14%</td><td class="num">13%</td><td class="num">14%</td></tr>
+              <tr><td></td><td>Not Established %</td><td class="num">33%</td><td class="num">43%</td><td class="num">50%</td><td class="num">43%</td></tr>
+              <tr><td></td><td>Unupdated %</td><td class="num">17%</td><td class="num">14%</td><td class="num">13%</td><td class="num">14%</td></tr>
+            </table>
+          </div>
+        </div>
+        <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>A buddy tab with the QA columns beside each call log, and the Monthly Reports tab that tracks each buddy's outcomes over time.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="wrap cs-layout">
+    <nav class="toc" aria-label="On This Page">
+      <p>On This Page</p>
+      <a href="#overview">Overview</a>
+      <a href="#problem">The Problem</a>
+      <a href="#versions">Three Versions</a>
+      <a href="#how">How v3 Works</a>
+      <a href="#decisions">Key Decisions</a>
+      <a href="#failure">A Silent Failure</a>
+      <a href="#results">Results</a>
+      <a href="#insights">Product Insights</a>
+    </nav>
+
+    <article class="article">
+      <section id="overview">
+        <h2><span class="n">01</span>Overview</h2>
+        <p class="lead">Every first-time visitor should get two calls a week for four weeks from one assigned volunteer, a "buddy", with every call reviewed for quality.</p>
+        <p>The process ran on a shared spreadsheet that lost data. I defined the product, built it with Claude and shipped three versions, including a full rebuild after a platform suspension. It now runs across five branches and is still in use after handover.</p>
+        <div class="privacy"><span class="src src-recreated">Dummy Data</span><span>Every visual on this page is recreated from the live product with invented names, numbers and contact details, to protect the people in the system.</span></div>
+      </section>
+
+      <section id="problem">
+        <h2><span class="n">02</span>The Problem</h2>
+        <p>For about a year and a half, intake was copied by hand, visitors were assigned in blocks of names and everyone worked in one sheet. Call notes were overwritten or deleted. Nobody owned a record, and QA and reporting were fully manual.</p>
+        <div class="flow">
+          <div class="flow-step"><span class="k">Requirement</span><b>Clear Ownership</b><span>Every visitor belongs to one buddy.</span></div>
+          <div class="flow-step"><span class="k">Requirement</span><b>Controlled Access</b><span>Personal data seen only by who needs it.</span></div>
+          <div class="flow-step"><span class="k">Requirement</span><b>No Data Loss</b><span>Every call recorded in one place.</span></div>
+          <div class="flow-step"><span class="k">Requirement</span><b>Accountability</b><span>Calls reviewed, nudged and reported.</span></div>
+          <div class="flow-step"><span class="k">Requirement</span><b>No Code To Run</b><span>Admins operate it from a menu.</span></div>
+        </div>
+        <div class="users">
+          <div class="user"><h3>Admin</h3><p>Runs intake, assignment, access and reports.</p></div>
+          <div class="user"><h3>Buddies</h3><p>Volunteers who call first-time visitors and log each call.</p></div>
+          <div class="user"><h3>QA Team</h3><p>QA members review call logs; a QA supervisor reviews the reviewers.</p></div>
+          <div class="user"><h3>Supervisors</h3><p>Need weekly intake and monthly performance views.</p></div>
+        </div>
+      </section>
+
+      <section id="versions">
+        <h2><span class="n">03</span>Three Versions</h2>
+        <div class="versions">
+          <div class="version"><div class="vh"><span class="vn">v1</span><span class="status status-archived">Retired</span></div><p>One spreadsheet with a tab for each buddy. Fixed lost notes.</p><span class="end">Ended: still manual and hard to track.</span></div>
+          <div class="version"><div class="vh"><span class="vn">v2</span><span class="status status-archived">Retired</span></div><p>Automated onboarding and emails, then a private sheet for each buddy.</p><span class="end">Ended: reported to Google within 24 hours and suspended. Rebuilt, flagged again: every file sat on one account.</span></div>
+          <div class="version current"><div class="vh"><span class="vn">v3</span><span class="status status-live">Live</span></div><p>Decentralised, rebuilt on a new account, with staged rollout.</p><span class="end">Running at HQ and four other branches.</span></div>
+        </div>
+        <div class="callout"><span class="label">The Insight</span><p>Splitting the files did not split the risk. Ownership and access had to be redesigned, not just the file structure.</p></div>
+        <p class="footnote">Google never confirmed the cause of the suspensions. My working theory was the volume of personal contact data held on one personal account.</p>
+      </section>
+
+      <section id="how">
+        <h2><span class="n">04</span>How v3 Works</h2>
+        <div class="flow">
+          <div class="flow-step"><span class="k">01</span><b>Intake Queue</b><span>Form submissions queue for processing.</span></div>
+          <div class="flow-step hot"><span class="k">02</span><b>Round-Robin Assignment</b><span>Next active buddy gets the visitor.</span></div>
+          <div class="flow-step"><span class="k">03</span><b>Private Buddy Sheet</b><span>Row written to master and to the buddy's own sheet.</span></div>
+          <div class="flow-step"><span class="k">04</span><b>Calls And Nudges</b><span>Eight call slots; reminders Tue, Thu, Sat.</span></div>
+          <div class="flow-step hot"><span class="k">05</span><b>Resumable Sync</b><span>Every 10 minutes into master and QA.</span></div>
+          <div class="flow-step"><span class="k">06</span><b>QA And Reports</b><span>Ratings, flags, weekly and monthly reports.</span></div>
+        </div>
+        <ul>
+          <li><strong>Staged access.</strong> Sheets stay admin-only until onboarding, seven buddies a day. The onboarding email explains the sheet before access lands, and was rebuilt after it broke on Gmail mobile.</li>
+          <li><strong>Call tracking.</strong> Eight call slots over four weeks, then a final status: Established, Visiting or Not Established.</li>
+          <li><strong>Resumable sync.</strong> A saved progress index lets a timed-out run resume where it stopped, then refresh QA dashboards. Built because Apps Script has no edit trigger across spreadsheets.</li>
+          <li><strong>Quality assurance.</strong> Three ratings from 1 to 5, two Yes, Partial or No checks, and one flag: Commend, Needs Coaching or Escalate. Assessments go out on the second and fourth Saturday.</li>
+          <li><strong>Reporting.</strong> A weekly intake report, plus monthly group, team and personal reports on a two-month lag, so every visitor has completed the full four-week cycle.</li>
+          <li><strong>Multi-branch.</strong> One configuration block, plus a column map that turns each branch's form wording into standard fields.</li>
+        </ul>
+
+        <h3>The Admin Experience</h3>
+        <div class="gallery two">
+          <figure class="figure mockwrap">
+            <div class="mock" id="thumb-src">
+              <div class="sheet-bar"><span class="sheet-icon"></span><span class="sheet-title">FOLLOW-UP SYSTEM · HQ</span></div>
+              <div class="sheet-menu"><span>File</span><span>Edit</span><span>View</span><span>Insert</span><span>Format</span><span>Data</span><span>Tools</span><span style="background:#E8EAED;padding:0 6px;border-radius:4px;color:#202124">Follow-Up System</span></div>
+              <div class="mock-menu">
+                <ul>
+                  <li class="on">Setup <i>&#9656;</i></li><li>Import <i>&#9656;</i></li><li>Reports <i>&#9656;</i></li><li>Reminders <i>&#9656;</i></li><li>QA <i>&#9656;</i></li><li>Sync <i>&#9656;</i></li><li>Maintenance <i>&#9656;</i></li><li>Onboarding <i>&#9656;</i></li><li>Diagnostics <i>&#9656;</i></li>
+                </ul>
+                <ul style="margin-left:4px">
+                  <li>Detect Form Columns</li><li>Run Initial Setup</li><li>Sync New Buddy Spreadsheets</li><li>Reset Round-Robin</li><li>Install All Triggers</li><li>Install Form Submit Trigger</li><li>Install Time Triggers</li>
+                </ul>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>A no-code admin menu runs setup, imports, reminders, QA, sync, onboarding and diagnostics.</span></figcaption>
+          </figure>
+          <figure class="figure mockwrap">
+            <div class="mock">
+              <div class="doc-sheet">
+                <div class="doc-title">FOLLOW-UP SYSTEM · ADMIN QUICK-START</div>
+                <div class="doc-row">1. Fill Buddies List: Name · Email · QA Member · Status</div>
+                <div class="doc-row">2. Fill QA Members List: Name · Email · Notes</div>
+                <div class="doc-row">3. Setup &rsaquo; Sync New Buddy Spreadsheets (admin access only)</div>
+                <div class="doc-row">4. Setup &rsaquo; Install All Triggers</div>
+                <div class="doc-row">5. Onboarding &rsaquo; Send Next Buddy Batch (7 a day, active only)</div>
+                <div class="doc-row">6. Onboarding &rsaquo; Send QA Onboarding Emails</div>
+                <div class="doc-row doc-h">ONBOARDING SEQUENCE PER BUDDY</div>
+                <div class="doc-row">Sheet created (admin only) &rarr; batch runs &rarr; buddy and QA get access &rarr; email sent &rarr; ONBOARDED marked</div>
+                <div class="doc-row doc-h">STATUS RULE</div>
+                <div class="doc-row">Do not update STATUS until after 4 weeks of follow-up.</div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>The built-in quick-start lets a new branch set itself up without me.</span></figcaption>
+          </figure>
+        </div>
+
+        <figure class="figure mockwrap">
+          <div class="mock">
+            <div class="sheet-bar"><span class="sheet-icon"></span><span class="sheet-title">FOLLOW-UP SYSTEM · HQ</span></div>
+            <div class="sheet-scroll">
+              <table class="grid">
+                <tr style="background:#141414;color:#FFFFFF"><th class="rowh" style="background:#141414"></th><th style="color:#FFFFFF;background:#141414">FULL NAME</th><th style="color:#FFFFFF;background:#141414">PHONE</th><th style="color:#FFFFFF;background:#141414">AREA</th><th style="color:#FFFFFF;background:#141414">OCCUPATION</th><th style="color:#FFFFFF;background:#141414">BUDDY</th><th style="color:#FFFFFF;background:#141414">STATUS</th><th style="color:#FFFFFF;background:#141414">WK 1 FIRST CALL</th><th style="color:#FFFFFF;background:#141414">WK 1 SATURDAY CALL</th><th style="color:#FFFFFF;background:#141414">WK 2 FIRST CALL</th></tr>
+                <tr><td class="rowh">2</td><td>Ada Nwankwo</td><td>0800 000 0101</td><td>Sample Estate</td><td>Student</td><td>Tobi</td><td><span class="chip-s" style="background:#D4EDDA;color:#1E6B34">ESTABLISHED</span></td><td>Enjoyed the welcome, will come back.</td><td>Confirmed for next week.</td><td>Attended, joined a group.</td></tr>
+                <tr><td class="rowh">3</td><td>Bayo Kareem</td><td>0800 000 0102</td><td>Demo Close</td><td>Engineer</td><td>Ifeoma</td><td><span class="chip-s" style="background:#FFF3CD;color:#8A6200">VISITING</span></td><td>Visiting from another city.</td><td>Sent a text, replied later.</td><td>Back home this week.</td></tr>
+                <tr><td class="rowh">4</td><td>Chika Obi</td><td>0800 000 0103</td><td>Example Road</td><td>Teacher</td><td>Kunle</td><td><span class="chip-s" style="background:#F8D7DA;color:#8E1B24">NOT ESTABLISHED</span></td><td>No answer, sent a WhatsApp.</td><td>Number switched off.</td><td>Still unreachable.</td></tr>
+                <tr><td class="rowh">5</td><td>Dele Ade</td><td>0800 000 0104</td><td>Test Avenue</td><td>Designer</td><td>Zainab</td><td></td><td>Good call, asked about groups.</td><td>Shared the group link.</td><td></td></tr>
+                <tr><td class="rowh">6</td><td>Efe Okon</td><td>0800 000 0105</td><td>Model Street</td><td>Nurse</td><td>Chidi</td><td></td><td>Call forwarded, left a text.</td><td></td><td></td></tr>
+              </table>
+            </div>
+            <div class="sheet-tabs"><span>Form Responses</span><span>Instructions</span><span class="on">Follow-Up System</span><span>Buddies List</span><span>QA Members List</span><span>Reports</span><span>RR Tracker</span></div>
+          </div>
+          <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>The master sheet: one row per visitor, the assigned buddy, eight call columns and a colour-coded final status.</span></figcaption>
+        </figure>
+
+        <h3>The Buddy And QA Experience</h3>
+        <div class="gallery two">
+          <figure class="figure mockwrap">
+            <div class="mock">
+              <div class="doc-sheet">
+                <div class="doc-title">BUDDY GUIDE</div>
+                <div class="doc-row doc-h">LOGGING YOUR CALLS</div>
+                <div class="doc-row">Eight call columns: two a week for four weeks. Write a short narrative after every call.</div>
+                <div class="doc-row doc-goodh">EXAMPLE · GOOD LOG</div>
+                <div class="doc-row doc-good">"Called Ada on Tuesday evening. She enjoyed the welcome and plans to come back next week. She asked about volunteer groups, so I shared the link. Will follow up on Saturday."</div>
+                <div class="doc-row doc-badh">EXAMPLES · POOR LOGS</div>
+                <div class="doc-row doc-bad">"Called. No answer." Did you text or reach out on WhatsApp? Did you try again later?</div>
+                <div class="doc-row doc-bad">"She's doing fine." No detail, no context, no next step.</div>
+                <div class="doc-row doc-h">REMINDERS</div>
+                <div class="doc-row">Tuesday, Thursday and Saturday, when a call is not logged.</div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Guidance lives inside the product: good and poor log examples written for text and WhatsApp follow-up.</span></figcaption>
+          </figure>
+          <figure class="figure mockwrap">
+            <div class="mock">
+              <div class="doc-sheet">
+                <div class="doc-title">QA DASHBOARD · SAMPLE REVIEWER</div>
+                <div class="doc-row doc-h">HOW TO RATE</div>
+                <div class="doc-row"><b>Call Quality (1 to 5).</b> Did a real, purposeful call happen?</div>
+                <div class="doc-row"><b>Log Detail (1 to 5).</b> Is the conversation documented with next steps?</div>
+                <div class="doc-row"><b>Tone And Approach (1 to 5).</b> Was the approach warm and personal?</div>
+                <div class="doc-row"><b>Issues Addressed.</b> Yes · Partial · No</div>
+                <div class="doc-row"><b>Follow-Up Taken.</b> Yes · Partial · No</div>
+                <div class="doc-row doc-h">THE FLAG COLUMN</div>
+                <div class="doc-row"><span class="chip-s" style="background:#D4EDDA;color:#1E6B34">COMMEND</span> &nbsp;<span class="chip-s" style="background:#FFF3CD;color:#8A6200">NEEDS COACHING</span> &nbsp;<span class="chip-s" style="background:#F8D7DA;color:#8E1B24">ESCALATE</span></div>
+                <div class="doc-row">Ratings are saved on every refresh. Assessments reach buddies on the 2nd and 4th Saturday.</div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>The QA rubric: three ratings, two checks and one flag for every visitor reviewed.</span></figcaption>
+          </figure>
+        </div>
+
+        <h3>Automated Communication</h3>
+        <div class="gallery two">
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">[HQ] Saturday Reminder: Saturday Call Due</span><span class="mail-from">Follow-Up System · to Tobi</span></div>
+              <div class="mail-card">
+                <div style="background:#FF4500;color:#FFFFFF;padding:14px 20px"><div style="font-weight:700;font-size:17px">LIGHT NATION HQ</div><div style="font-size:12px;opacity:.9">Saturday Reminder</div></div>
+                <div class="mail-body">
+                  <p>Hi <b>Tobi</b>,</p>
+                  <p>Please log your Saturday call for the following first-timers:</p>
+                  <table class="mtable"><tr><th>First-Timer</th></tr><tr><td>Ada Nwankwo</td></tr><tr><td>Dele Ade</td></tr><tr><td>Funmi Lawal</td></tr></table>
+                  <span class="mail-btn" style="background:#FF4500">Open My Sheet</span>
+                </div>
+                <div class="mail-foot">Follow-Up Department · LIGHT NATION HQ</div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Nudges go out only when a call is missing, with a one-tap link to the buddy's sheet.</span></figcaption>
+          </figure>
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">[HQ] Your Monthly Report · March 2026</span><span class="mail-from">Follow-Up System · to Kunle</span></div>
+              <div class="mail-card">
+                <div style="background:#FF4500;color:#FFFFFF;padding:14px 20px"><div style="font-weight:700;font-size:17px">LIGHT NATION HQ</div><div style="font-size:12px;opacity:.9">Your Monthly Performance Review</div></div>
+                <div class="mail-body">
+                  <p>Hi <b>Kunle</b>, here are your results for March 2026.</p>
+                  <div class="tiles">
+                    <div class="tile" style="background:#FFF1EB;color:#B33A0C"><b>8</b><span>Assigned</span></div>
+                    <div class="tile" style="background:#E6F4EA;color:#1E6B34"><b>38%</b><span>Established</span></div>
+                    <div class="tile" style="background:#FFF8E1;color:#8A6200"><b>25%</b><span>Visiting</span></div>
+                    <div class="tile" style="background:#FDECEC;color:#8E1B24"><b>25%</b><span>Not Established</span></div>
+                    <div class="tile" style="background:#F1F3F4;color:#3C4043"><b>12%</b><span>Unupdated</span></div>
+                  </div>
+                  <span class="mail-btn" style="background:#FF4500">Open My Sheet</span>
+                </div>
+                <div class="mail-foot">Follow-Up Department · LIGHT NATION HQ</div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Every buddy gets a personal monthly review, two months in arrears so each cycle is complete.</span></figcaption>
+          </figure>
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">[HQ] Your Team Monthly Report · March 2026</span><span class="mail-from">Follow-Up System · to Sample QA Member</span></div>
+              <div class="mail-card">
+                <div style="background:#FF4500;color:#FFFFFF;padding:14px 20px"><div style="font-weight:700;font-size:17px">LIGHT NATION HQ</div><div style="font-size:12px;opacity:.9">Your Team Report</div></div>
+                <div class="mail-body">
+                  <p style="color:#E03C00;font-weight:700">March 2026 · Your Team</p>
+                  <table class="mtable">
+                    <tr><th>Buddy</th><th class="num">Assigned</th><th class="num">Established</th><th class="num">Visiting</th></tr>
+                    <tr><td>Tobi</td><td class="num">8</td><td class="num">25%</td><td class="num">13%</td></tr>
+                    <tr><td>Ifeoma</td><td class="num">6</td><td class="num">33%</td><td class="num">17%</td></tr>
+                    <tr><td>Kunle</td><td class="num">8</td><td class="num">38%</td><td class="num">25%</td></tr>
+                    <tr><td>Zainab</td><td class="num">5</td><td class="num">40%</td><td class="num">0%</td></tr>
+                    <tr style="background:#FFF1EB"><td>Total</td><td class="num"><b>27</b></td><td></td><td></td></tr>
+                  </table>
+                  <span class="mail-btn" style="background:#FF4500">Open Report</span>
+                </div>
+                <div class="mail-foot">Follow-Up Department · LIGHT NATION HQ</div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Each QA member sees their whole team's outcomes in one table.</span></figcaption>
+          </figure>
+          <figure class="figure mockwrap">
+            <div class="mail">
+              <div class="mail-meta"><span class="mail-subject">[HQ] Weekly First-Timers Report · 58 First-Timers</span><span class="mail-from">Follow-Up System · to Supervisors</span></div>
+              <div class="mail-card">
+                <div style="background:#FF4500;color:#FFFFFF;padding:14px 20px"><div style="font-weight:700;font-size:17px">LIGHT NATION HQ</div><div style="font-size:12px;opacity:.9">Weekly First-Timers Report</div></div>
+                <div class="mail-body">
+                  <p>Good morning.</p>
+                  <p><b>58</b> new first-timers registered this week. The report has been created and shared with you.</p>
+                  <span class="mail-btn" style="background:#FF4500">Open Report</span>
+                </div>
+                <div class="mail-foot">Follow-Up Department · LIGHT NATION HQ</div>
+              </div>
+            </div>
+            <figcaption><span class="tagline"><span class="src src-recreated">Recreated · Dummy Data</span></span><span>Supervisors get the week's intake without opening a spreadsheet.</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="decisions">
+        <h2><span class="n">05</span>Key Decisions And Trade-Offs</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Decision</th><th>Alternative</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Keep contact details on buddy sheets</td><td>Email details and strip them from sheets</td><td>Every call is recorded in one place</td></tr>
+              <tr><td>Grant access at onboarding</td><td>Share sheets on creation</td><td>Context arrives before data does</td></tr>
+              <tr><td>Seven buddies a day</td><td>Onboard everyone at once</td><td>Limits exposure and surfaces issues early</td></tr>
+              <tr><td>Keep Google's sharing notice</td><td>Share silently</td><td>Silent sharing left buddies locked out</td></tr>
+              <tr><td>Resumable 10-minute sync</td><td>Real-time sync</td><td>Works within platform limits, without rework</td></tr>
+              <tr><td>Two-month reporting lag</td><td>Report per assignment</td><td>Simpler to run, and every cycle is complete</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="failure">
+        <h2><span class="n">06</span>Catching A Silent Failure</h2>
+        <div class="flow">
+          <div class="flow-step warn"><span class="k">Symptom</span><b>Queue Said DONE</b><span>New branch submissions marked processed, yet nothing reached the master sheet.</span></div>
+          <div class="flow-step"><span class="k">Root Cause</span><b>Split Name Field</b><span>The branch form used first and last name, so the mapped full name was empty.</span></div>
+          <div class="flow-step"><span class="k">Diagnosis</span><b>Diagnostic Replay</b><span>Replayed the last queued submission to trace it.</span></div>
+          <div class="flow-step hot"><span class="k">Backlog</span><b>Fail Loudly</b><span>An empty required field must raise an error, never a false success.</span></div>
+        </div>
+      </section>
+
+      <section id="results">
+        <h2><span class="n">07</span>Results</h2>
+        <div class="results">
+          <div class="result"><span class="big">~250</span><span>New visitors a month handled at HQ</span></div>
+          <div class="result"><span class="big">~40</span><span>Buddies at HQ, with 6 QA members and 1 QA supervisor</span></div>
+          <div class="result"><span class="big">5</span><span>Branches live: HQ and four others</span></div>
+          <div class="result"><span class="big">0</span><span>Code needed to run it, so branches self-onboard after handover</span></div>
+        </div>
+      </section>
+
+      <section id="insights">
+        <h2><span class="n">08</span>Product Insights</h2>
+        <ul>
+          <li><strong>Access design is product design.</strong> Who sees what, and in what order, decided whether the product survived.</li>
+          <li><strong>Platform dependencies are product risks.</strong></li>
+          <li><strong>Real constraints beat architectural purity.</strong> I proposed stripping personal details from buddy sheets. The real requirement was a single record of every call, so they stayed.</li>
+          <li><strong>Silent failures cost more than loud ones.</strong></li>
+          <li><strong>Agree definitions before building.</strong></li>
+        </ul>
+      </section>
+
+      <div class="next-case" data-next-case="light-nation"></div>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span><strong style="color: var(--band-ink)">OLUWUMI OYEKANMI</strong> · Product Manager</span>
+    <nav aria-label="Footer">
+      <a href="../#about">About</a><a href="../#approach">Approach</a><a href="../#work">Case Studies</a><a href="../#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../assets/js/projects.js"></script>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
