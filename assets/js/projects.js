@@ -13,8 +13,8 @@ window.PROJECTS = [
     frame: "#FFFFFF",  /* optional: fixed frame colour around the card image */
     title: "GHEALEAD",
     subtitle: "Virtual Trauma Recovery Platform",
-    category: "Healthtech · SaaS",
-    role: "Product And Operations Manager",
+    category: "Healthtech · Web App",
+    role: "Product and Operations Manager",
     status: "live",
     description: "I reframed a course into a therapy platform and owned it from requirements to release: screening, payments, therapist matching, booking and session management.",
     tags: ["Product Strategy", "Requirements", "MVP Scoping"],
