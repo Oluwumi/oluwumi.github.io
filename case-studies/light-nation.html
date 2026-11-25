@@ -104,7 +104,7 @@
       <a href="#decisions">Key Decisions</a>
       <a href="#failure">A Silent Failure</a>
       <a href="#results">Results</a>
-      <a href="#insights">Product Insights</a>
+      <a href="#insights">Insights And Lesson</a>
     </nav>
 
     <article class="article">
@@ -112,12 +112,18 @@
         <h2><span class="n">01</span>Overview</h2>
         <p class="lead">Every first-time visitor should get two calls a week for four weeks from one assigned volunteer, a "buddy", with every call reviewed for quality.</p>
         <p>The process ran on a shared spreadsheet that lost data. I defined the product, built it with Claude and shipped three versions, including a full rebuild after a platform suspension. It now runs across five branches and is still in use after handover.</p>
+        <div class="glance"><div><span class="k">Delivered</span><p>A decentralised follow-up platform with automatic assignment, call tracking, quality review and reporting, run from a no-code menu.</p></div><div><span class="k">Adopted</span><p>Running at HQ and four other branches, handling about 250 new visitors a month at HQ, and still in use after handover.</p></div><div><span class="k">Impact</span><p>Every visitor has one owner, every call is recorded in one place, and weekly and monthly reports are produced automatically.</p></div></div>
         <div class="privacy"><span class="src src-recreated">Dummy Data</span><span>Every visual on this page is recreated from the live product with invented names, numbers and contact details, to protect the people in the system.</span></div>
       </section>
 
       <section id="problem">
         <h2><span class="n">02</span>The Problem</h2>
         <p>For about a year and a half, intake was copied by hand, visitors were assigned in blocks of names and everyone worked in one sheet. Call notes were overwritten or deleted. Nobody owned a record, and QA and reporting were fully manual.</p>
+        <div class="ba">
+          <div class="ba-col before"><h3>Before</h3><ol><li>Intake Copied by Hand</li><li>Visitors Assigned in Blocks of Names</li><li>Everyone Works in One Shared Sheet</li><li>Call Notes Overwritten or Deleted</li><li>QA and Reports Compiled by Hand</li></ol></div>
+          <div class="ba-arrow" aria-hidden="true">&rarr;</div>
+          <div class="ba-col after"><h3>After</h3><ol><li>Form Submissions Queue Automatically</li><li>Round-Robin Assignment to the Next Buddy</li><li>Each Buddy Works in a Private Sheet</li><li>Every Call Logged and Synced to the Master</li><li>QA Ratings and Automatic Reports</li></ol></div>
+        </div>
         <div class="flow">
           <div class="flow-step"><span class="k">Requirement</span><b>Clear Ownership</b><span>Every visitor belongs to one buddy.</span></div>
           <div class="flow-step"><span class="k">Requirement</span><b>Controlled Access</b><span>Personal data seen only by who needs it.</span></div>
@@ -373,8 +379,9 @@
       </section>
 
       <section id="insights">
-        <h2><span class="n">08</span>Product Insights</h2>
+        <h2><span class="n">08</span>Product Insights And Lesson</h2>
         <ul>
+          <li><strong>Build for the people who run it after you leave.</strong> A no-code admin menu is why branches still run it after handover.</li>
           <li><strong>Access design is product design.</strong> Who sees what, and in what order, decided whether the product survived.</li>
           <li><strong>Platform dependencies are product risks.</strong></li>
           <li><strong>Real constraints beat architectural purity.</strong> I proposed stripping personal details from buddy sheets. The real requirement was a single record of every call, so they stayed.</li>

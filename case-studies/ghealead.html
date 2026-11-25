@@ -40,10 +40,10 @@
       <h1>GHEALEAD</h1>
       <p class="cs-sub">From A Course To A Live Therapy Platform</p>
       <dl class="cs-meta">
-        <div><dt>Role</dt><dd>Product and Operations Manager</dd></div>
+        <div><dt>Role</dt><dd>Founding Product And Operations Manager</dd></div>
         <div><dt>Status</dt><dd><span class="status status-live">Live</span><small>Not yet publicly launched</small></dd></div>
         <div><dt>Users</dt><dd>Clients · Therapists · Admins</dd></div>
-        <div><dt>Platform</dt><dd>Web Application</dd></div>
+        <div><dt>Platform</dt><dd>SaaS Web Application</dd></div>
       </dl>
     </div>
   </section>
@@ -86,13 +86,16 @@
       <a href="#prd">PRD Excerpt</a>
       <a href="#scope">Live Now Vs Next</a>
       <a href="#metrics">Early Signal And Metrics</a>
+      <a href="#testing">Testing</a>
+      <a href="#lessons">Lesson</a>
     </nav>
 
     <article class="article">
       <section id="overview">
         <h2><span class="n">01</span>Overview</h2>
-        <p class="lead">A client asked for a trauma recovery course. I saw that content alone could not deliver recovery: people needed screening, a qualified therapist and continuity of care.</p>
+        <p class="lead">GHEALEAD began as a plan for a trauma recovery course. After speaking with clinical psychologists and therapists, I saw that content alone could not deliver recovery: people needed screening, a qualified therapist and continuity of care.</p>
         <p>I reframed the product as a virtual therapy platform, wrote the requirements, owned the product decisions across every journey and tested it through to release. It is live at <a href="https://ghealead.com" rel="noopener">ghealead.com</a> and has not yet been publicly launched.</p>
+        <div class="glance"><div><span class="k">Delivered</span><p>A live therapy platform with three user roles and an eight-step client journey, from screening to session tracking.</p></div><div><span class="k">Adopted</span><p>Not yet publicly launched. Before any marketing, two prospective users registered and completed screening.</p></div><div><span class="k">Impact</span><p>Too early to measure. The success metrics are defined below and will be tracked from launch.</p></div></div>
       </section>
 
       <section id="reframe">
@@ -102,7 +105,7 @@
           <div class="is-real"><span class="k">The Real Job To Be Done</span><span class="v">Get a person safely from "I need help" to ongoing sessions with the right therapist.</span></div>
         </div>
         <p>A course could not answer the questions that mattered. Who is suitable for virtual therapy? Who decides? How is a client matched, charged, booked and cared for over time?</p>
-        <p>Those are the questions of a service, not of content. I expanded the scope from content to service.</p>
+        <p>I took those questions to clinical psychologists and therapists. Their answers made it clear that the product had to be a service, not content, so I expanded the scope from a course to a therapy platform.</p>
         <div class="callout"><span class="label">Trade-Off</span><p>A larger MVP and a longer build, in exchange for a product that could actually deliver recovery support.</p></div>
       </section>
 
@@ -113,6 +116,7 @@
           <div class="user"><h3>Therapists</h3><p>Need their availability, their assigned clients and a place to document care.</p></div>
           <div class="user"><h3>Admins</h3><p>Run intake, matching, payments, sessions and access. Permissions are set per role, and the lead therapist works as an admin-type user.</p></div>
         </div>
+        <p>Each role sees a different product: clients need a guided path, therapists need a working view of their caseload, and admins need control of the whole pipeline. Admin permissions are configurable, so each person gets access that matches their job.</p>
       </section>
 
       <section id="journey">
@@ -257,6 +261,31 @@
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section id="testing">
+        <h2><span class="n">09</span>Testing Before Release</h2>
+        <p>I tested every journey end to end, in each role, before release. A sample of the checks:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Role</th><th>Scenario</th><th>Expected Result</th></tr></thead>
+            <tbody>
+              <tr><td>Client</td><td>Submit the pre-assessment without accepting the terms</td><td>Submission is blocked</td></tr>
+              <tr><td>Lead Therapist</td><td>Decline an application</td><td>The applicant receives the referral email</td></tr>
+              <tr><td>Lead Therapist</td><td>Approve an application</td><td>The client receives the payment email</td></tr>
+              <tr><td>Client</td><td>Pay for a plan in another currency</td><td>Payment succeeds and the receipt shows the currency</td></tr>
+              <tr><td>Client</td><td>Reschedule a session</td><td>The therapist is notified by email</td></tr>
+              <tr><td>Therapist</td><td>Mark a session as a no-show</td><td>Attendance and session history update</td></tr>
+              <tr><td>Admin With Limited Role</td><td>Open a client record</td><td>Access follows the role's permissions</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="footnote">Reconstructed for this portfolio as a sample of the test checklist.</p>
+      </section>
+
+      <section id="lessons">
+        <h2><span class="n">10</span>Lesson</h2>
+        <p class="lesson"><strong>Talk to experts before you build.</strong> Speaking with clinical psychologists and therapists turned a course into a therapy platform.</p>
       </section>
 
       <div class="next-case" data-next-case="ghealead"></div>

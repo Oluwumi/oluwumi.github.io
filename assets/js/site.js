@@ -45,7 +45,7 @@
   /* Project cards */
   var cards = document.querySelector("[data-cards]");
   if (cards) {
-    cards.innerHTML = projects.map(function (p) {
+    cards.innerHTML = projects.filter(function (p) { return !p.more; }).map(function (p) {
       var br = p.brand || ["#142D4E", "#F18B75"];
       return '<a class="card" style="--b1:' + br[0] + ';--b2:' + br[1] + (p.frame ? ';--frame:' + p.frame : '') + '" href="' + base + "case-studies/" + p.slug + '.html">' +
         '<div class="card-thumb"><img src="' + base + p.thumb + '" alt="' + esc(p.thumbAlt) + '" loading="lazy" width="800" height="500"></div>' +
@@ -59,6 +59,20 @@
           '<div class="tags">' + p.tags.map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") + "</div>" +
           '<span class="card-cta">Read Case Study →</span>' +
         "</div></a>";
+    }).join("");
+  }
+
+  /* More Work list */
+  var more = document.querySelector("[data-more-cards]");
+  if (more) {
+    var extra = projects.filter(function (p) { return p.more; });
+    if (!extra.length) { var mw = more.closest(".more-work"); if (mw) mw.remove(); }
+    more.innerHTML = extra.map(function (p) {
+      var br = p.brand || ["#142D4E", "#F18B75"];
+      return '<a class="more-card" style="--b1:' + br[0] + '" href="' + base + "case-studies/" + p.slug + '.html">' +
+        "<b>" + esc(p.title) + "</b>" +
+        "<span>" + esc(p.subtitle) + " · " + esc(p.role) + (p.metrics ? " · " + p.metrics.map(function (m) { return m[0] + " " + m[1]; }).join(" · ") : "") + "</span>" +
+        '<span class="card-cta">Read Case Study →</span></a>';
     }).join("");
   }
 

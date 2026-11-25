@@ -4,6 +4,7 @@
   page in /case-studies/ (start from case-studies/_template.html).
   status: "live" | "in-development" | "concept" | "completed" | "archived"
   The order here is the order on the homepage and in the Case Studies menu.
+  more: true puts a project in the smaller More Work list instead of the main cards.
 */
 window.PROJECTS = [
   {
@@ -13,8 +14,8 @@ window.PROJECTS = [
     frame: "#FFFFFF",  /* optional: fixed frame colour around the card image */
     title: "GHEALEAD",
     subtitle: "Virtual Trauma Recovery Platform",
-    category: "Healthtech · Web App",
-    role: "Product and Operations Manager",
+    category: "Healthtech · SaaS",
+    role: "Founding Product And Operations Manager",
     status: "live",
     description: "I reframed a course into a therapy platform and owned it from requirements to release: screening, payments, therapist matching, booking and session management.",
     tags: ["Product Strategy", "Requirements", "MVP Scoping"],
@@ -51,6 +52,7 @@ window.PROJECTS = [
   },
   {
     slug: "wale-lab-r2i",
+    more: true,  /* shown under More Work instead of the main cards */
     metrics: [["164","Fellows Tracked"],["70+","Hours Saved"]],
     brand: ["#00A708", "#F7921E"],  /* card colours: primary, secondary */
     title: "Wale Lab R2I Dashboard",
